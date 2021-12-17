@@ -1,3 +1,4 @@
+# Solve Again
 class Solution:
     def isRobotBounded(self, instructions: str) -> bool:
         dir_x , dir_y = 0, 1
