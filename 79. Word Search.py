@@ -1,3 +1,26 @@
+# Second time solved Dec 29, 2021
+class Solution:
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        ROW, COL = len(board), len(board[0])
+        visited = set()
+        def dfs(row, col, i):
+            
+            if (row >= ROW or col >= COL or row < 0 or col < 0 or (row,col) in visited or word[i] != board[row][col]):
+                return False
+            visited.add((row,col))
+            if i == len(word)-1:
+                return True
+            
+            ret_val = dfs(row+1, col, i+1) or dfs(row, col+1, i+1) or dfs(row-1,col,i+1) or dfs(row, col-1, i+1)
+            
+            visited.remove((row,col))
+            return ret_val
+        
+        for row in range(ROW):
+            for col in range(COL):
+                if dfs(row, col, 0): return True
+        return False
+
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
         # Better Solution
