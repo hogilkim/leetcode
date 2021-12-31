@@ -1,3 +1,22 @@
+# Dec 30, 2021 Second try - solved!
+
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        prev_path = [1]*n
+        next_path = []
+        
+        i = 1
+        while i < m:
+            for j in range(n):
+                from_top = prev_path[j]
+                from_left = next_path[j-1] if j > 0 else 0
+                next_path.append(from_top + from_left)
+            prev_path = next_path
+            next_path = []
+            i += 1
+        
+        return prev_path[n-1]
+
 from collections import deque
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
