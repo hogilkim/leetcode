@@ -6,7 +6,7 @@
 
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        # time O(n) space O(1)
+        # time O(n) space O(1), solve again
         fast, slow = head, head
         while fast and fast.next:
             fast = fast.next.next
