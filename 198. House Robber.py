@@ -1,4 +1,5 @@
 # second try - solved! but previous one better
+
 class Solution:
     def rob(self, nums: List[int]) -> int:
         if len(nums) < 2: return nums[0]
