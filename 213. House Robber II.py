@@ -1,3 +1,29 @@
+# second try - solved! but previous one better
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        if len(nums) < 2: return nums[0]     
+            
+        
+        return max(self.helper(nums[1:]), self.helper(nums[:len(nums)-1]))
+        
+    
+    
+    def helper(self, nums):
+        if len(nums) < 2: return nums[0]
+        
+        dp = [nums[0], max(nums[0], nums[1])] 
+        
+        def helper2(i):
+            if i >= len(nums): return
+            dp.append( max( dp[i-1], dp[i-2] + nums[i] ) )
+        
+        
+        for i in range(2, len(nums)):
+            helper2(i)
+        
+        return dp[-1]
+
+
 class Solution:
     def rob(self, nums: List[int]) -> int:
         def helper(nums_sublist):
