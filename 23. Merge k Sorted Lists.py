@@ -3,6 +3,36 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+
+# second attempt - solved
+class Solution:
+    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        min_heap = []
+        
+        for i in range(len(lists)):
+            if lists[i]:
+                min_heap.append([lists[i].val, i])
+            
+        heapq.heapify(min_heap)
+        
+        
+        dummy = curr = ListNode()
+        while min_heap:
+            _, index = heapq.heappop(min_heap)
+            node = lists[index]
+            if lists[index].next:
+                lists[index] = lists[index].next
+                heapq.heappush(min_heap, [lists[index].val, index])
+            curr.next = node
+            curr = curr.next
+        
+        return dummy.next
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         if not lists or len(lists) == 0:
