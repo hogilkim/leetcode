@@ -1,3 +1,8 @@
+#solve again. Second attempt: Jan 9
+
+
+
+# solved before:
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
         s1_list = [0] * 26
