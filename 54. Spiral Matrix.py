@@ -1,3 +1,45 @@
+#second attempt - solved Jan 11, 2022
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        
+        directions = [[1,0], [0,1], [-1,0], [0,-1]]
+        
+        top, bottom, left, right = 0, len(matrix)-1, 0, len(matrix[0])-1
+        curr_row, curr_col = 0,0
+        result = []
+        
+        while left <= right and top <= bottom:
+            # left -> right
+            curr_row = top
+            curr_col = left
+            while curr_col <= right:
+                
+                result.append(matrix[curr_row][curr_col])
+                curr_col += 1
+            # top -> right
+            curr_row = top+1
+            curr_col = right
+            while curr_row <= bottom:
+                result.append(matrix[curr_row][curr_col])
+                curr_row += 1
+            # right -> left
+            curr_row = bottom
+            curr_col = right - 1
+            while curr_col >= left and top<bottom:
+                result.append(matrix[curr_row][curr_col])
+                curr_col -= 1
+            # bottom -> top
+            curr_row = bottom-1
+            curr_col = left
+            while curr_row >= top+1 and left < right:
+                result.append(matrix[curr_row][curr_col])
+                curr_row -= 1
+                
+            left += 1
+            right -= 1
+            top += 1
+            bottom -= 1
+        return result
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         left, right = 0, len(matrix[0])
