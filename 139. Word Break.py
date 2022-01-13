@@ -1,4 +1,19 @@
 # solve again
+# second attempt Jan 13 2022
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+        dp = [False] * (len(s)+1)
+        dp[-1] = True
+        
+        for i in range(len(s)-1, -1, -1):
+            for word in wordDict:
+                if (i+len(word) <= len(s)) and s[i:i+len(word)] == word:
+                    dp[i] = dp[i + len(word)]
+                if dp[i]:
+                    break
+        
+        return dp[0]
+# solve again
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
         # solve again
