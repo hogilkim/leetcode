@@ -3,6 +3,51 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+# solved - second attempt Jan 12, 2022
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+# memorize fast = head.next
+
+class Solution:
+    def reorderList(self, head: Optional[ListNode]) -> None:
+        """
+        Do not return anything, modify head in-place instead.
+        """
+        slow, fast = head, head.next
+        
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+        
+        # reverse second half
+        curr = slow.next
+        prev = slow.next = None
+        while curr:
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
+            
+        
+        first, second = head, prev
+        while second:
+            first_next = first.next
+            second_next = second.next
+            first.next = second
+            second.next = first_next
+            
+            first = first_next
+            second = second_next
+                    
+
+        
+        return head
+            
+
 class Solution:
     def reorderList(self, head: Optional[ListNode]) -> None:
         """
