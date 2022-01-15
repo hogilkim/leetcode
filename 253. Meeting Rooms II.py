@@ -25,6 +25,7 @@ class Solution:
             
         return max_counter
 
+
 class Solution:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
         start = []
