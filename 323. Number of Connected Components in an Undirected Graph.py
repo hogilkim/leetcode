@@ -1,3 +1,33 @@
+# solved
+# second attempt - Jan 16, 2022
+class Solution:
+    def countComponents(self, n: int, edges: List[List[int]]) -> int:
+        graph = {i:[] for i in range(n)}
+        
+        for edge in edges:
+            graph[edge[0]].append(edge[1])
+            graph[edge[1]].append(edge[0])
+            
+        visited = set()
+        
+        def dfs(node):
+            if node in visited: return
+            
+            visited.add(node)
+            
+            for nei in graph[node]:
+                dfs(nei)
+            
+            
+        ncc = 0
+        
+        for i in range(n):
+            if i not in visited:
+                dfs(i)
+                ncc += 1
+        
+        return ncc
+        
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
         graph_map = {i:[] for i in range(n)}
