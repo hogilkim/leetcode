@@ -1,3 +1,6 @@
+# second attempt - Jan 16, 2022
+
+
 class Solution:
     def findPeakElement(self, nums: List[int]) -> int:
         # solve again.
