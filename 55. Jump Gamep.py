@@ -1,3 +1,5 @@
+# solve again
+# second attempt - Jan 18, 2022
 import collections
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
