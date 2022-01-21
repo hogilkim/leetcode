@@ -1,3 +1,5 @@
+# solve again
+# First Attempt - Jan 20, 2022 
 class Solution:
     def findAllConcatenatedWordsInADict(self, words: List[str]) -> List[str]:
     
