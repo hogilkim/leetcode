@@ -19,5 +19,4 @@ class Solution:
                 if len(suggestions) == 3:
                     break
             result.append(suggestions.copy())
-        
         return result
