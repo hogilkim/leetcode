@@ -40,6 +40,29 @@
 #        Return None if this NestedInteger holds a single integer
 #        :rtype List[NestedInteger]
 #        """
+
+# ====== Second Attempt - solved =====
+import collections
+class Solution:
+    def depthSumInverse(self, nestedList: List[NestedInteger]) -> int:
+        depth_sum = collections.defaultdict(int)
+        max_depth = 1
+        
+        deque = collections.deque([(nestedList, 1)])
+        
+        while deque:
+            popped, curr_depth = deque.popleft()
+            max_depth = max(max_depth, curr_depth)
+            for item in popped:
+                if item.isInteger(): depth_sum[curr_depth] += item.getInteger()
+                else:
+                    deque.append((item.getList(), curr_depth+1))
+        
+        return sum([depth_sum[depth]*(max_depth - depth+1) for depth in depth_sum.keys()])
+
+
+
+# ===== First Attempt - solved ======
 import collections
 class Solution:
     def depthSumInverse(self, nestedList: List[NestedInteger]) -> int:
