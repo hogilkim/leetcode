@@ -6,3 +6,4 @@ class Solution:
             return 2
 
         return (L//p)%2
+        
