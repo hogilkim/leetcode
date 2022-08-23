@@ -1,3 +1,41 @@
+# Second: Aug 23, 2022
+
+class Solution:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        if not head or not head.next: return True
+        
+        slow = fast = head
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+        prev = None
+        while slow:
+            nxt = slow.next
+            slow.next = prev
+            prev = slow
+            slow = nxt
+        
+        first, second = head, prev 
+        
+        while second:
+            if second.val != first.val: return False
+            first, second = first.next, second.next
+        
+        return True
+
+#         1 2 3 2 1
+#         s
+#         f
+#           s f
+#             s.  f
+            
+#         1 2 2 1
+#         s
+#         f
+#           s f
+#             s.   f
+
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
