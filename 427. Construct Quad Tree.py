@@ -12,25 +12,26 @@ class Node:
 
 class Solution:
     def construct(self, grid: List[List[int]]) -> 'Node':
-        
-        ROW, COL = len(grid), len(grid[0])
+        LEN = len(grid)
+                
         def dfs(row, col, length):
             root = Node(grid[row][col], 1)
             elements = set()
-            only_one = True
+            
             for i in range(row, row+length):
                 elements = elements.union(set(grid[i][col:col+length]))
-                if len(elements) > 1:
-                    only_one = False
+                if len(elements)>1:
+                    root.isLeaf  = 0
                     break
-            if only_one: return root
-            
-            half_len = length//2
-            root.topLeft = dfs(row,col,half_len)
-            root.topRight = dfs(row, col+half_len, half_len)
-            root.bottomLeft = dfs(row+half_len,col,half_len)
-            root.bottomRight = dfs(row+half_len, col+half_len, half_len)
-            root.isLeaf = 0
+
+            if root.isLeaf: return root
+            half_len = length // 2
+
+            root.topLeft = dfs(row, col, half_len)
+            root.topRight = dfs(row, col + half_len, half_len)
+            root.bottomLeft = dfs(row + half_len, col, half_len)
+            root.bottomRight = dfs(row + half_len, col + half_len, half_len)
+
             return root
-        
-        return dfs(0,0,ROW)
+    
+        return dfs(0,0,LEN)
