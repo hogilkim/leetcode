@@ -1,3 +1,23 @@
+# Solved thrid time
+# Sep 18, 2022
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        l, r = 0, len(height)-1
+        
+        water = 0
+        lmax = rmax = 0
+        
+        while l <= r:
+            lmax, rmax = max(height[l],lmax), max(height[r],rmax)
+            if lmax >= rmax:
+                
+                water += rmax - height[r]
+                r -= 1
+            else:
+                water += lmax - height[l]
+                l+=1
+        
+        return water
 # solve again
 # second attempt - Jan 20, 2022
 
