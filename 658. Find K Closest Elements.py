@@ -1,3 +1,16 @@
+# second attempt - Sep 29, 2022 
+class Solution:
+    def findClosestElements(self, arr: List[int], k: int, x: int) -> List[int]:
+        l, r = 0, len(arr)-1
+        
+        while r - l + 1 > k:
+            if abs(arr[r] - x) >= abs(arr[l] - x):
+                r -= 1
+            else:
+                l += 1
+        
+        return arr[l:r+1]
+
 # solve again
 # first attempt - Jan 17, 2022 
 class Solution:
