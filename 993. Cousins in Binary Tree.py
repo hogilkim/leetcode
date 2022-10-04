@@ -1,3 +1,19 @@
+from collections import deque
+class Solution:
+    def isCousins(self, root: Optional[TreeNode], x: int, y: int) -> bool:
+        x_y = []
+        
+        def dfs(depth, parent, node):
+            if not node: return
+            if node.val == x or node.val == y:
+                x_y.append([depth, parent])
+            
+            dfs(depth+1, node, node.left)
+            dfs(depth+1, node, node.right)
+        
+        dfs(0,0, root)
+        return x_y[0][0] == x_y[1][0] and x_y[0][1] != x_y[1][1]
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
