@@ -1,3 +1,42 @@
+# second try - Oct 12, 2022
+import heapq
+class MaxStack:
+
+    def __init__(self):
+        self.stack = []
+        self.max_heap = []
+        self.id = 0
+        self.mh_popped = set()
+        self.st_popped = set()
+        heapq.heapify(self.max_heap)
+    def push(self, x: int) -> None:
+        self.stack.append((x, self.id))
+        
+        heapq.heappush(self.max_heap, (-x,-self.id))
+        self.id+=1
+
+    def pop(self) -> int:
+        while self.stack and self.stack[-1][1] in self.mh_popped: self.stack.pop()
+        popped, sid = self.stack.pop()
+        self.st_popped.add(sid)
+        return popped
+
+    def top(self) -> int:
+        while self.stack and self.stack[-1][1] in self.mh_popped: self.stack.pop()
+        return self.stack[-1][0]
+
+    def peekMax(self) -> int:
+        while self.max_heap and -self.max_heap[0][1] in self.st_popped:
+            heapq.heappop(self.max_heap)
+        return -self.max_heap[0][0]
+    def popMax(self) -> int:
+        while self.max_heap and -self.max_heap[0][1] in self.st_popped:
+            heapq.heappop(self.max_heap)
+        
+        num, mid = heapq.heappop(self.max_heap)
+        self.mh_popped.add(-mid)
+        return -num
+
 import heapq
 class MaxStack:
 
