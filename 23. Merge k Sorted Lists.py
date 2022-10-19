@@ -1,3 +1,42 @@
+# Third time
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+import heapq
+class Solution:
+    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        
+        # declare min_heap
+        # put first items of each array into min_heap (item, idx_of_array)
+        min_heap = []
+        for i in range(len(lists)):
+            if lists[i]:
+                min_heap.append((lists[i].val,i))
+                
+                
+        heapq.heapify(min_heap)
+        
+        dummy = head = ListNode()
+        
+        while min_heap:
+            # pop from min_heap
+            _, idx = heapq.heappop(min_heap)
+            
+            # store it into result array
+            head.next = lists[idx]
+            head = head.next
+            
+            # get item from idx_of_array if next ListNode is not Null
+            lists[idx] = lists[idx].next
+            if lists[idx]:
+                heapq.heappush(min_heap, (lists[idx].val, idx))
+                
+        
+        return dummy.next
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
