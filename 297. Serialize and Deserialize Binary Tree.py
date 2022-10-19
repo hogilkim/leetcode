@@ -1,3 +1,58 @@
+class Codec:
+
+    def serialize(self, root):
+        """Encodes a tree to a single string.
+        
+        :type root: TreeNode
+        :rtype: str
+        """
+        NONE = "#"
+        
+        preorder = []
+        
+        def dfs(node):
+            if not node:
+                preorder.append(NONE)
+                return
+            
+            preorder.append(str(node.val))
+            
+            dfs(node.left)
+            dfs(node.right)
+        
+        dfs(root)
+        
+        return ",".join(preorder)
+        
+
+    def deserialize(self, data):
+        """Decodes your encoded data to tree.
+        
+        :type data: str
+        :rtype: TreeNode
+        """
+        NONE = "#"
+        preorder = data.split(",")
+                    
+        i = 0
+        
+        def dfs():
+            nonlocal i
+            if i >= len(preorder): return None
+            if preorder[i] == NONE:
+                i += 1
+                return None
+                
+            curr_node = TreeNode(int(preorder[i]))
+            i+=1
+            
+            curr_node.left = dfs()
+            curr_node.right = dfs()
+    
+            return curr_node
+        return dfs()
+
+
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, x):
