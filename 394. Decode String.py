@@ -1,5 +1,30 @@
 class Solution:
     def decodeString(self, s: str) -> str:
+        res = ""
+        
+        currnum = 0
+        stack = []
+        
+        for char in s:
+            if char.isdigit():
+                currnum = currnum*10 + int(char)
+            elif char == "[":
+                stack.append(res)
+                stack.append(currnum)
+                res = ""
+                currnum = 0
+            elif char == "]":
+                num = stack.pop()
+                prev_str = stack.pop()
+                res = prev_str + res*num
+            else:
+                res += char
+        
+        return res
+
+        
+class Solution:
+    def decodeString(self, s: str) -> str:
         stack = []
         curr_num = 0
         curr_str = ""
