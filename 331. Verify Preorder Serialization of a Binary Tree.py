@@ -1,3 +1,45 @@
+# 헷갈림
+class Solution:
+    def isValidSerialization(self, preorder: str) -> bool:
+        stack = []
+        
+        preorder = preorder.split(',')
+        
+        idx = -1
+        
+        for s in preorder:
+            stack.append(s)
+            idx += 1
+            while self.endsWithTwoHash(stack, idx):
+                # pop hash signs
+                stack.pop()
+                stack.pop()
+                idx -= 2
+                if idx <0: return False
+                
+                # pop value
+                stack.pop()
+                
+                stack.append("#")
+        
+        if len(stack) == 1 and stack[0] == "#": return True
+        return False
+        
+        
+        
+        
+    
+    
+    def endsWithTwoHash(self,stack, idx):
+        if idx < 1: return False
+        
+        if stack[idx] =="#" and stack[idx-1] == "#":
+            return True
+        return False
+            
+            
+
+
 from collections import deque
 class Solution:
     def isValidSerialization(self, preorder: str) -> bool:
