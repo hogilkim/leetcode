@@ -1,3 +1,30 @@
+# second trial solved
+
+class ProductOfNumbers:
+
+    def __init__(self):
+        self.arr = [1]
+        self.last_zero = -1
+    def add(self, num: int) -> None:
+        # check if last element is zero
+        if num == 0: self.last_zero = len(self.arr)
+        # if zero, append num
+        if self.arr[-1] == 0: self.arr.append(num)
+        
+        # if not zero, append [-1]*num
+        else: self.arr.append(self.arr[-1]*num)
+
+    def getProduct(self, k: int) -> int:
+        # if len(arr) - k -1 <= last_zero: return 0
+        if len(self.arr) -k <= self.last_zero: return 0
+        # OR return [-1]//max([-k-1], 1)
+        return self.arr[-1]//max(self.arr[-k-1], 1)
+        
+# Your ProductOfNumbers object will be instantiated and called as such:
+# obj = ProductOfNumbers()
+# obj.add(num)
+# param_2 = obj.getProduct(k)
+
 class ProductOfNumbers:
 
     def __init__(self):
