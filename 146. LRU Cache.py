@@ -1,3 +1,58 @@
+# second time
+class Node:
+    def __init__(self, key=-1, val=-1, nxt=None, prev = None):
+        self.key = key
+        self.val = val
+        self.next = nxt
+        self.prev = prev
+        
+class LRUCache:
+    def __init__(self, capacity: int):
+        self.left = Node()
+        self.right = Node()
+        self.size = capacity
+        self.left.next = self.right
+        self.right.prev = self.left
+        self.cache = {}
+
+    def get(self, key: int) -> int:
+        if key in self.cache:
+            self.remove(self.cache[key])
+            self.insertlast(self.cache[key])
+            return self.cache[key].val
+        return -1
+
+    def put(self, key: int, value: int) -> None:
+        if key in self.cache:
+            self.remove(self.cache[key])
+            del self.cache[key]
+        elif len(self.cache) == self.size:
+            delkey = self.left.next.key
+            self.remove(self.left.next)
+            del self.cache[delkey]
+        
+        
+        new = Node(key,value)
+        self.insertlast(new)
+        self.cache[key] = new
+        
+    def insertlast(self, node):
+        prev, nxt = self.right.prev, self.right
+        prev.next, node.prev = node, prev
+        node.next, nxt.prev = nxt, node
+        
+    
+    def remove(self, node):
+        prev, nxt = node.prev, node.next
+        prev.next, nxt.prev = nxt, prev
+        
+        
+
+
+# Your LRUCache object will be instantiated and called as such:
+# obj = LRUCache(capacity)
+# param_1 = obj.get(key)
+# obj.put(key,value)
 class Node:
     def __init__(self, key, val):
         self.key, self.val = key, val
