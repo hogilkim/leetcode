@@ -1,3 +1,23 @@
+# Third Oct 20, 2022 
+class Solution:
+    def numDecodings(self, s: str) -> int:
+        if s[0] == "0": return 0
+            
+        # dp size len(s) + 1
+        dp = [0] * (len(s) + 1)
+        dp[0] = 1; dp[1] = 1
+        
+        # for loop
+        for i in range(1,len(s)):
+            # s[i] >0 -> add dp[i+1]
+            if int(s[i]) > 0: dp[i+1] += dp[i]
+                
+            # 10<=s[i-1] + s[i] <= 26 -> add dp[i+1]
+            if 10<=int(s[i-1:i+1])<=26: dp[i+1] += dp[i-1]
+        
+        return dp[-1]
+
+
 # solve again
 # second attempt - Jan 18, 2022
 
