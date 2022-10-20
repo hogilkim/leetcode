@@ -1,4 +1,20 @@
 # 헷갈림
+# == Oct 20 ==
+
+# SOL 2
+class Solution:
+    def isValidSerialization(self, preorder: str) -> bool:
+        preorder, stack = preorder.split(","), []
+        for node in preorder:
+            print(stack)
+            while stack and node == stack[-1] == "#":
+                stack.pop()
+                if not stack: return False
+                stack.pop()
+                print(stack)
+            stack.append(node)
+        return stack == ["#"]
+# SOL 1
 class Solution:
     def isValidSerialization(self, preorder: str) -> bool:
         stack = []
