@@ -1,5 +1,33 @@
 class Solution:
     def shipWithinDays(self, weights: List[int], days: int) -> int:
+        # cannot change order 
+        
+        l, r = max(weights), sum(weights)
+        
+        while l<r:
+            mid = (l+r)//2
+            
+            curr_weight=0
+            daystook = 1
+            # for loop
+            for w in weights:
+                if curr_weight + w > mid:
+                    daystook += 1
+                    curr_weight = 0
+
+                curr_weight += w
+            
+            if daystook > days:
+                l = mid+1
+            
+            else: r = mid
+        
+        return l
+        
+        
+
+class Solution:
+    def shipWithinDays(self, weights: List[int], days: int) -> int:
         left, right = max(weights), sum(weights)
         
         while left < right:
