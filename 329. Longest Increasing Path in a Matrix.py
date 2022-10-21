@@ -1,3 +1,42 @@
+# Third attempt - solved ! Oct 21, 2022 
+
+class Solution:
+    def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
+        
+        ROW, COL = len(matrix), len(matrix[0])
+        directions = [(1,0),(0,1),(-1,0),(0,-1)]
+        
+        memo = {} # key: (r,c) value: max lip
+        
+        def dfs(r,c):
+            if (r,c) in memo: return memo[(r,c)]
+            
+            max_lip = 0
+        
+            # for loop through the direction
+            for rd, cd in directions:
+                # not out of index and next one not in memo
+                nr, nc = r+rd, c+cd
+                if 0<=nr<ROW and 0<=nc<COL and matrix[r][c] < matrix[nr][nc]:
+                    max_lip = max(dfs(nr,nc), max_lip)
+                    
+            
+            # store (r,c) = max value of lip
+            memo[(r,c)] = max_lip + 1
+            
+            # return max value of lip
+            return max_lip+1
+        
+        
+        max_lip_res = 0
+        
+        for r in range(ROW):
+            for c in range(COL):
+                max_lip_res = max(dfs(r,c), max_lip_res)
+        
+        return max_lip_res
+        
+
 class Solution:
     def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
         # dynamic programming approach
