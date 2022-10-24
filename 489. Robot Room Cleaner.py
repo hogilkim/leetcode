@@ -30,6 +30,32 @@
 #        :rtype void
 #        """
 
+# Third attempt - solved
+class Solution:
+    def cleanRoom(self, robot):
+        """
+        :type robot: Robot
+        :rtype: None
+        """
+        visited = set()
+        def dfs(r,c,rdir, cdir):
+            robot.clean()
+            
+            visited.add((r,c))
+            
+            for _ in range(4):
+                if (r+rdir, c+cdir) not in visited and robot.move():
+                    dfs(r+rdir, c+cdir, rdir, cdir)
+                rdir, cdir = cdir, -rdir
+                robot.turnLeft()
+            
+            robot.turnLeft(); robot.turnLeft();
+            robot.move()
+            robot.turnLeft();robot.turnLeft();
+        
+        dfs(0,0,0,1)
+
+        
 class Solution:
     def cleanRoom(self, robot):
         """
