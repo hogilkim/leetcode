@@ -40,6 +40,25 @@
 #        Return None if this NestedInteger holds a single integer
 #        :rtype List[NestedInteger]
 #        """
+#2
+import collections
+class Solution:
+    def depthSum(self, nestedList: List[NestedInteger]) -> int:
+        queue = collections.deque([])
+        res = 0
+        for item in nestedList:
+            queue.append((item,1))
+            while queue:
+                popped, depth = queue.popleft()
+                if popped.isInteger():
+                    res += popped.getInteger()*depth
+                else:
+                    for it in popped.getList():
+                        queue.append((it,depth+1))
+        
+        return res
+
+
 import collections
 class Solution:
     def depthSum(self, nestedList: List[NestedInteger]) -> int:
