@@ -1,3 +1,37 @@
+# third
+from collections import defaultdict
+class Solution:
+    def removeStones(self, stones: List[List[int]]) -> int:
+        rowdic = defaultdict(list)
+        coldic = defaultdict(list)
+        
+        for row, col in stones:
+            rowdic[row].append((row,col))
+            coldic[col].append((row,col))
+            
+        visited = set()
+        
+        def dfs(r,c):
+            visited.add((r,c))
+            
+            for row, col in rowdic[r]:
+                if (row,col) not in visited:
+                    dfs(row,col)
+            
+            for row, col in coldic[c]:
+                if (row,col) not in visited:
+                    dfs(row,col)
+                    
+        
+        island = 0
+        
+        for row, col in stones:
+            if (row,col) not in visited:
+                dfs(row,col)
+                island += 1
+            
+        return len(stones) - island
+
 from collections import defaultdict
 class Solution:
     def removeStones(self, stones: List[List[int]]) -> int:
