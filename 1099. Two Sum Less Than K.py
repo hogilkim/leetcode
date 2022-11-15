@@ -1,3 +1,21 @@
+# Third
+class Solution:
+    def twoSumLessThanK(self, nums: List[int], k: int) -> int:
+        nums = sorted(nums)
+        l, r = 0, len(nums)-1
+        
+        res = -1
+        
+        while l<r:
+            temp = nums[l] + nums[r]
+            if temp < k:
+                res = max(res, temp)
+                l += 1
+            else:
+                r -= 1
+        
+        return res
+
 class Solution:
     def twoSumLessThanK(self, nums: List[int], k: int) -> int:
         
