@@ -1,3 +1,50 @@
+# second Nov 20, 2022 
+class Solution:
+    def calculate(self, s: str) -> int:
+        s = list(s)
+        stack = []
+        
+        def calc(op, num):
+            if op == "+":
+                stack.append(num)
+            elif op == "-":
+                stack.append(-num)
+        
+        operators = ["+","-"]
+        op = "+"
+        num = 0
+        
+        for char in s+["+"]:
+            
+            if char in operators:
+                calc(op, num)
+                op = char
+                num = 0
+            elif char.isdigit():
+                num = num*10 + int(char)
+            
+            elif char == "(":
+                stack.append(op)
+                op = "+"
+                num = 0
+                
+            elif char == ")":
+                calc(op, num)
+                op = "+"
+                num = 0
+                temp = 0
+                while stack[-1] not in operators:
+                    temp += stack.pop()
+                
+                temp_op = stack.pop()
+                calc(temp_op, temp)
+                
+            # print(char, stack)
+        
+                
+        return sum(stack)
+
+
 class Solution:
     def calculate(self, s: str) -> int:
         s = list(s)
