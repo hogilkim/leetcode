@@ -1,3 +1,24 @@
+# second - Nov 30, 2022
+class Solution:
+    def minIncrementForUnique(self, nums: List[int]) -> int:
+        
+        # sort
+        nums = sorted(nums)
+        
+        res = 0
+        
+        # for loop starting from index 1
+        for i in range(1, len(nums)):
+            # compare to prev. 
+            # if curr <= prev
+            if nums[i-1] >= nums[i]:
+                # make curr = prev+1
+                res += abs(nums[i] - nums[i-1]) + 1
+                nums[i] = nums[i-1] + 1
+        
+        return res
+
+
 from collections import deque
 class Solution:
     def minIncrementForUnique(self, nums: List[int]) -> int:
