@@ -1,3 +1,23 @@
+from collections import Counter
+import heapq
+class Solution:
+    def frequencySort(self, s: str) -> str:
+        counter = Counter(s)
+        
+        max_heap = []
+        heapq.heapify(max_heap)
+        
+        for key, val in counter.items():
+            heapq.heappush(max_heap, (-val, key))
+        
+        res = ""
+        
+        while max_heap:
+            freq, char = heapq.heappop(max_heap)
+            
+            res += (-freq)*char
+        
+        return res
 # first attempt - Jan 11
 import collections
 class Solution:
