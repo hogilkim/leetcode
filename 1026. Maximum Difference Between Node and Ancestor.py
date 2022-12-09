@@ -1,3 +1,15 @@
+class Solution:
+    def maxAncestorDiff(self, root: Optional[TreeNode], maxval = float('-inf'), minval=float('inf')) -> int:
+        if not root: return 0
+
+        maxval = max(maxval, root.val)
+        minval = min(minval, root.val)
+
+        l = self.maxAncestorDiff(root.left, maxval, minval)
+        r = self.maxAncestorDiff(root.right, maxval, minval)
+
+        return max(l,r, abs(maxval-root.val), abs(minval-root.val))
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
