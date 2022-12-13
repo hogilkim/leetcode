@@ -1,3 +1,30 @@
+from collections import defaultdict
+class Solution:
+    def countComponents(self, n: int, edges: List[List[int]]) -> int:
+        dic = defaultdict(list)
+
+        for i,j in edges:
+            dic[i].append(j)
+            dic[j].append(i)
+
+        visited = set()
+
+        def dfs(node):
+            visited.add(node)
+            for nxt in dic[node]:
+                if nxt not in visited:
+                    dfs(nxt)
+
+
+        islands = 0
+
+        for i in range(n):
+            if i not in visited:
+                islands += 1
+                dfs(i)
+        
+        return islands
+
 # solved
 # second attempt - Jan 16, 2022
 class Solution:
