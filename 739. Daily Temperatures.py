@@ -1,6 +1,26 @@
 import heapq
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+        minheap = []
+        heapq.heapify(minheap)
+
+        res = [0]*len(temperatures)
+
+        for idx, num in enumerate(temperatures):
+            heapq.heappush(minheap, (num, idx))
+
+            while minheap and minheap[0][0] < num:
+                temp, index = heapq.heappop(minheap)
+
+                res[index] = idx-index
+
+
+        return res
+
+
+import heapq
+class Solution:
+    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
         min_heap = []
         
         res = [0] * len(temperatures)
