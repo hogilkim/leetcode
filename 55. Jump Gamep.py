@@ -1,4 +1,18 @@
 # solve again
+# third attempt - Dec 26, 2022
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        
+        goal = len(nums)-1
+
+        for i in range(len(nums)-1,-1,-1):
+            if i+nums[i] >= goal:
+                goal = i
+        
+        return True if goal == 0 else False
+
+
+# solve again
 # second attempt - Jan 18, 2022
 import collections
 class Solution:
