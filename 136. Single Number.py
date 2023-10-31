@@ -1,5 +1,12 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
+        res = 0
+        for num in nums:
+            res ^= num
+        return res
+
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
         
         
         return sum(list(set(nums)))*2 - sum(nums)
