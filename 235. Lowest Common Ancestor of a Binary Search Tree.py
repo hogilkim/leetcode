@@ -1,4 +1,4 @@
-# Nov 9, 2023 solve again
+# Nov 9, 2023 solve again. third trial
 
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
