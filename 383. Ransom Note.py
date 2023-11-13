@@ -1,3 +1,18 @@
+# Nov 12, 2023 
+
+from collections import Counter
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        c1 = Counter(ransomNote)
+        c2 = Counter(magazine)
+
+        for key in c1.keys():
+            if key not in c2: return False
+        
+            elif c1[key] > c2[key]: return False
+        
+        return True
+
 import collections
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
