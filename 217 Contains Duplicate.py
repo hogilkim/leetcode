@@ -1,4 +1,10 @@
-# solved Oct 30, 2023
+# Nov 14, 2023 217-3
+
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        return len(nums) != len(set(nums))
+
+# solved Oct 30, 2022
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         return len(nums) != len(set(nums))
