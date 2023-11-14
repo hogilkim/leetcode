@@ -1,3 +1,15 @@
+# Nov 13, 2023 206-2
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        prev, curr = None, head
+
+        while curr:
+            nxt = curr.next
+            curr.next = prev
+            prev, curr = curr, nxt
+        
+        return prev
+
 # Definition for singly-linked list.
 class ListNode(object):
     def __init__(self, val=0, next=None):
