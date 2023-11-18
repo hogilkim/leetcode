@@ -1,3 +1,20 @@
+# Third attempt - solve again
+# Nov 18, 2023 57-3
+
+class Solution:
+    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+        res = []
+        for idx, (curr_l, curr_r) in enumerate(intervals):
+            if curr_r < newInterval[0]:
+                res.append([curr_l, curr_r])
+            elif newInterval[1] < curr_l:
+                res.append(newInterval)
+                return res + intervals[idx:]
+            else:
+                newInterval = [min(newInterval[0], curr_l), max(newInterval[1], curr_r)]
+        res.append(newInterval)
+        return res
+
 # solved with O(nlogn), not with O(n)
 # second attempt - Jan 13, 2022
 class Solution:
