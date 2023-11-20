@@ -1,3 +1,31 @@
+# Nov 19, 2023 542-2 solve again
+from collections import deque
+class Solution:
+    def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
+        ROW, COL = len(mat), len(mat[0])
+        visited = set()
+        direcs = [(0,1), (1,0), (-1,0), (0, -1)]
+        res = [[0 for _ in range(COL)] for _ in range(ROW)]
+        queue = deque([])
+
+        for r in range(ROW):
+            for c in range(COL):
+                if mat[r][c] == 0:
+                    queue.append((r,c))
+                    visited.add((r,c))
+        
+        while queue:
+            r, c = queue.popleft()
+            
+            for rd, cd in direcs:
+                nr, nc = r + rd, c + cd
+                if 0 <= nr < ROW and 0 <= nc < COL and (nr, nc) not in visited:
+                    res[nr][nc] = res[r][c] + 1
+                    visited.add((nr, nc))
+                    queue.append((nr, nc))
+        
+        return res
+
 import collections
 class Solution:
     def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
