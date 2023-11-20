@@ -1,3 +1,22 @@
+# Nov 20, 2023 973-2
+import heapq
+class Solution:
+    def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
+        # return sorted(points, key=lambda x:x[0]**2 + x[1]**2)[:k]
+
+        min_heap = []
+        heapq.heapify(min_heap)
+
+        for x, y in points:
+            heapq.heappush(min_heap, (x**2+y**2, x, y))
+        
+        res = []
+        for i in range(k):
+            _, x, y = heapq.heappop(min_heap)
+            res.append([x,y])
+        
+        return res
+
 class Solution:
     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
         # time: O(n logn solution)  space: O(1)
