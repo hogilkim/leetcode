@@ -1,3 +1,25 @@
+# Nov 21, 2023 15-3
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        nums = sorted(nums)
+        res = []
+        
+        for pivot in range(len(nums)-2):
+            if pivot > 0 and nums[pivot-1] == nums[pivot]: continue
+            l, r = pivot + 1, len(nums)-1
+
+            while l < r:
+                threesum = nums[pivot] + nums[l] + nums[r]
+                if threesum == 0: 
+                    res.append([nums[pivot], nums[l], nums[r]])
+                    l += 1
+                    while nums[l] == nums[l-1] and l < r:
+                        l += 1
+                elif threesum > 0: r -= 1
+                else: l += 1
+        
+        return res
+
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         # second time - could not solve. solve again
