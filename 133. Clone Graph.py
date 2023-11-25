@@ -17,6 +17,7 @@ class Solution:
             return copy
         
         return dfs(node) if node else None
+    
 
 # second try, couldn't solve
 class Solution:
