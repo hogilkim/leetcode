@@ -1,3 +1,33 @@
+# Nov 26, 2023 150-2
+class Solution:
+    def evalRPN(self, tokens: List[str]) -> int:
+        operators = "*/+-"
+
+        def calc(num1, num2, op):
+            if op == "*":
+                return num1 * num2
+            elif op == "/":
+                return int(num1/num2)
+            elif op == "+":
+                return num1 + num2
+            elif op == "-":
+                return num1 - num2
+        
+        stack = []
+        for token in tokens:
+            if token[0].isdigit():
+                stack.append(int(token))
+
+            elif token in operators:
+                num2 = stack.pop()
+                num1 = stack.pop()
+                stack.append(calc(num1, num2, token))
+
+            else:
+                stack.append(-1 * int(token[1:]))
+
+        return stack[0]
+
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         stack = []
