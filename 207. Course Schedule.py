@@ -1,3 +1,40 @@
+# Nov 26, 2023 207-4 
+
+from collections import defaultdict
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+
+        prereqs = defaultdict(list)
+
+        for course, prereq in prerequisites:
+            prereqs[prereq].append(course)
+
+        visited = set()
+        path = set()
+
+        def dfs(course):
+            visited.add(course)
+            path.add(course)
+
+            res = True
+
+            for next_course in prereqs[course]:
+                if next_course in path:
+                    return False
+                if next_course not in visited: 
+                    res = res and dfs(next_course)
+            
+            path.remove(course)
+            return res
+
+        
+        for course in range(numCourses):
+            if course not in visited:
+                if not dfs(course): return False
+        
+        return len(visited) == numCourses
+
+
 # third - solved
 from collections import defaultdict
 class Solution:
