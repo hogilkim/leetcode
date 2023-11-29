@@ -1,3 +1,41 @@
+# solved
+# Third attempt - Nov 29, 2023 208-3
+class TrieNode:
+    def __init__(self):
+        self.next = {}
+        self.isWord = False
+
+class Trie:
+
+    def __init__(self):
+        self.head = TrieNode()
+
+    def insert(self, word: str) -> None:
+        trienode = self.head
+
+        for char in word:
+            if char not in trienode.next:
+                trienode.next[char] = TrieNode()
+            trienode = trienode.next[char]
+        
+        trienode.isWord = True
+
+    def search(self, word: str) -> bool:
+        trienode = self.head
+        for char in word:
+            if char not in trienode.next: return False
+            trienode = trienode.next[char]
+        
+        return trienode.isWord
+
+    def startsWith(self, prefix: str) -> bool:
+        trienode = self.head
+        for char in prefix:
+            if char not in trienode.next: return False
+            trienode = trienode.next[char]
+        return True
+    
+    
 #solved
 # second attempt - Jan 17, 2022
 class TrieNode :
