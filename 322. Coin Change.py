@@ -1,3 +1,22 @@
+# Fourth attempt - Solved
+# Nov 29, 2023 322-4
+class Solution:
+    def coinChange(self, coins: List[int], amount: int) -> int:
+
+        dp = [0]*(amount+1)
+
+        for i in range(1, amount+1):
+            min_coin = 10001
+            for coin in coins:
+                prev = i - coin
+                if prev >= 0:
+                    min_coin = min(min_coin, dp[prev] + 1)
+            dp[i] = min_coin
+
+        
+        return dp[-1] if dp[-1] < 10001 else -1
+    
+    
 # Third attempt for TikTok OA - saw answer
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
