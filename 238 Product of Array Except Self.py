@@ -1,3 +1,24 @@
+# Third attempt - solve again
+# Dec 1, 2023 238-3
+
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        res = [1]*len(nums)
+
+        prod_from_left = 1
+        prod_from_right = 1
+
+        for i in range(len(nums)):
+            res[i] *= prod_from_left
+            prod_from_left *= nums[i]
+        
+        for i in range(len(nums)-1, -1, -1):
+            res [i] *= prod_from_right
+            prod_from_right *= nums[i]
+        
+        return res
+
+
 # second attempt Dec 28, 2021 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
