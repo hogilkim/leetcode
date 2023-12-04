@@ -1,3 +1,28 @@
+# Third attempt - solved Dec 5, 2023
+class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        dirs = [(1,0), (0,1), (-1,0), (0,-1)]
+        visited = set()
+        ROW, COL = len(grid), len(grid[0])
+
+        def dfs(r, c):
+            visited.add((r,c))
+
+            for rd, cd in dirs:
+                nr, nc = r + rd, c + cd
+
+                if 0 <= nr < ROW and 0 <= nc < COL and (nr, nc) not in visited and grid[nr][nc] == "1":
+                    dfs(nr, nc)
+
+        islands = 0
+        for r in range(ROW):
+            for c in range(COL):
+                if (r,c) not in visited and grid[r][c] == "1":
+                    dfs(r,c)
+                    islands += 1
+        
+        return islands
+
 # second attempt - Jan 9 Solved!
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
