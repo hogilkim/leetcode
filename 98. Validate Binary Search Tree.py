@@ -1,3 +1,12 @@
+# Third attempt - solve again
+# Dec 4, 2023 
+class Solution:
+    def isValidBST(self, root: Optional[TreeNode], bottom = float('-inf'), top = float('inf')) -> bool:
+        if not root: return True
+
+        return bottom < root.val < top and self.isValidBST(root.left, bottom, root.val)\
+                                        and self.isValidBST(root.right, root.val, top)
+
 # solve again
 # Second attempt - Aug 10, 2022
 # Definition for a binary tree node.
