@@ -1,3 +1,19 @@
+# Dec 12, 2023 62-3
+# solved
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        prev = [0] + [1]*n
+
+        for row in range(1, m):
+            curr = [1]
+            for col in range(1, n):
+                curr.append(prev[len(curr)] + curr[-1])
+
+            prev = curr
+        
+        return prev[-1]
+
+
 # Dec 30, 2021 Second try - solved!
 
 class Solution:
