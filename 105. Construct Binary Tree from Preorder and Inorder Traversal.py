@@ -1,3 +1,19 @@
+# Dec 14, 2023 105-3
+class Solution:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+        if not preorder or not inorder: return None
+        root = preorder[0]
+
+        dividing_idx = inorder.index(root)
+        inorder_left = inorder[:dividing_idx]
+        inorder_right = inorder[dividing_idx+1:]
+
+        root_node = TreeNode(val=root)
+        root_node.left = self.buildTree(preorder[1:len(inorder_left)+1], inorder_left)
+        root_node.right = self.buildTree(preorder[len(inorder_left)+1:], inorder_right)
+        
+        return root_node
+
 # solve again
 # second attempt - Jan 15, 2022 | Third attempt - July 13, 2022
 # Definition for a binary tree node.
