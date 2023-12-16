@@ -1,3 +1,25 @@
+# Dec 15, 2023 78-2
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        res = []
+
+        def backtracking(i, part):
+            if i >= len(nums): 
+                res.append(part.copy())
+                return
+
+            # X include i
+            backtracking(i+1, part.copy())
+
+            # include i
+            part.append(nums[i])
+            backtracking(i+1, part.copy())
+
+        
+        backtracking(0, [])
+
+        return res
+
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         # Another Solution & better, clean
