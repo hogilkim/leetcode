@@ -1,4 +1,32 @@
 # solved 
+# third attempt - Dec 17, 2023 
+class Solution:
+    def letterCombinations(self, digits: str) -> List[str]:
+        res = []
+        digit_to_alphabet = {
+            "2":"abc",
+            "3":"def",
+            "4":"ghi",
+            "5":"jkl",
+            "6":"mno",
+            "7":"qprs",
+            "8":"tuv",
+            "9":"wxyz"
+        }
+        
+        if not digits: return []
+        def backtracking(idx, dgs, comb):
+            if idx >= len(dgs):
+                res.append(comb)
+                return
+            
+            for char in digit_to_alphabet[dgs[idx]]:
+                backtracking(idx+1, dgs, comb+char)
+        
+        backtracking(0, digits, "")
+        return res
+    
+# solved 
 # second attempt - Jan 15, 2022
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
