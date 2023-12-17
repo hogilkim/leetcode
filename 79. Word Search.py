@@ -1,3 +1,32 @@
+# Dec 17, 2023 79-3
+class Solution:
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        ROW, COL = len(board), len(board[0])
+        dirs = [(1,0), (0,1), (-1,0), (0,-1)]
+        path = set()
+
+        # dfs
+        def dfs(idx, row, col):
+            if board[row][col] != word[idx]: return False
+            if idx == len(word)-1: return True
+            path.add((row, col))
+
+            for rdir, cdir in dirs:
+                nr, nc = row + rdir, col + cdir
+                if 0 <= nr < ROW and 0 <= nc < COL and (nr, nc) not in path:
+                    if dfs(idx+1, nr, nc): return True
+
+            path.remove((row, col))
+
+            return False
+        
+
+        for r in range(ROW):
+            for c in range(COL):
+                if dfs(0, r, c): return True
+        
+        return False
+
 # Second time solved Dec 29, 2021
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
