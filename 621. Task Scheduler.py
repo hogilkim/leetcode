@@ -1,3 +1,35 @@
+# Dec 18, 2023 621-2
+from collections import Counter
+import heapq
+class Solution:
+    def leastInterval(self, tasks: List[str], n: int) -> int:
+        task_counter = Counter(tasks)
+        max_heap = []
+        heapq.heapify(max_heap)
+        for task in task_counter.keys():
+            heapq.heappush(max_heap, [-task_counter[task], task])
+        
+        total_time = 0
+        idles = 0
+        while max_heap:
+            available_task_num = n+1
+            done_task = []
+            while max_heap and available_task_num > 0:
+                curr_task = heapq.heappop(max_heap)
+                curr_task[0] += 1
+                done_task.append(curr_task)
+                available_task_num -= 1
+            
+            total_time += n+1
+            idles = n+1 - len(done_task)
+            while done_task:
+                item = done_task.pop()
+                if item[0] < 0: 
+                    heapq.heappush(max_heap, item)
+        if idles: total_time -= idles
+
+        return total_time
+
 # solved
 # first attempt - Jan 17, 2022
 import collections  
