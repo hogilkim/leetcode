@@ -1,12 +1,23 @@
+# Dec 20, 2023 230-2
+class Solution:
+    def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+        res = -1
+
+        def dfs(node, acc):
+            nonlocal res
+            if not node: return 0
+
+            left = dfs(node.left, acc)
+            if left + acc + 1 == k: res = node.val
+            right = dfs(node.right, left + acc + 1)
+            
+            return left + 1 + right
+        
+        dfs(root, 0)
+        return res
+
 # solve again
 # second attempt - Jan 13, 2022
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
 class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         
