@@ -1,3 +1,22 @@
+# Dec 19, 2023 438-2
+from collections import Counter
+class Solution:
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        p_counter = Counter(p)
+        counter = Counter()
+        res = []
+
+        for idx, char in enumerate(s):
+            counter[char] += 1
+            if idx < len(p) - 1: continue
+
+            if idx >= len(p):
+                counter[s[idx-len(p)]] -= 1
+            
+            if p_counter == counter: res.append(idx-len(p)+1)
+        
+        return res
+
 class Solution:
     def findAnagrams(self, s: str, p: str) -> List[int]:
         res = []
