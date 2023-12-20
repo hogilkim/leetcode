@@ -1,3 +1,57 @@
+# Solve again
+# Dec 19, 2023 146-3
+class Node:
+    def __init__(self, key = -1, val = -1, prev = None, nxt = None):
+        self.key = key
+        self.val = val
+        self.prev = prev
+        self.next = nxt
+        
+class LRUCache:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.left = Node(-100,-100)
+        self.right = Node(-1,-1)
+        self.cache = {}
+
+        self.left.next = self.right
+        self.right.prev = self.left
+
+    def get(self, key: int) -> int:
+        # print(f"get {key}")
+        if key in self.cache:
+            val = self.cache[key].val
+            self.removeNode(key)
+            self.put(key, val)
+            return val
+        return -1
+        
+
+    def put(self, key: int, value: int) -> None:
+        # print(f"put: {key} {value}")
+        if key in self.cache:
+            self.removeNode(key)
+        if len(self.cache) == self.capacity:
+            self.removeNode(self.right.prev.key)
+        
+        prev = self.left
+        nxt = self.left.next
+        toInsert = Node(key=key, val=value, prev=prev, nxt=nxt)
+        self.cache[key] = toInsert
+        
+        prev.next = toInsert
+        nxt.prev = toInsert
+
+    def removeNode(self, key):
+        node = self.cache[key]
+        prev = node.prev
+        nxt = node.next
+
+        prev.next = nxt
+        nxt.prev = prev
+
+        del self.cache[key]
+
 # second time
 class Node:
     def __init__(self, key=-1, val=-1, nxt=None, prev = None):
