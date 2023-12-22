@@ -1,3 +1,54 @@
+# Dec 21, 2023 297-3
+class Codec:
+
+    def serialize(self, root):
+        """Encodes a tree to a single string.
+        
+        :type root: TreeNode
+        :rtype: str
+        """
+        preorder = []
+        NONE = '#'
+        def dfs(node):
+            if not node:
+                preorder.append(NONE)
+                return
+            preorder.append(str(node.val))
+
+            dfs(node.left)
+            dfs(node.right)
+        
+        dfs(root)
+        return ",".join(preorder)
+
+
+    def deserialize(self, data):
+        """Decodes your encoded data to tree.
+        
+        :type data: str
+        :rtype: TreeNode
+        """
+        NONE = "#"
+        preorder = data.split(",")
+        
+        i = 0
+        def dfs():
+            nonlocal i
+            if i >= len(preorder): return None
+            if preorder[i] == NONE: 
+                return None
+            
+            val = preorder[i]
+            node = TreeNode(int(val))
+            
+            i += 1
+            node.left = dfs()
+            i += 1
+            node.right = dfs()
+            return node
+        
+        return dfs()
+
 class Codec:
 
     def serialize(self, root):
