@@ -1,3 +1,30 @@
+# Dec 23, 2023 23-4
+import heapq
+class Solution:
+    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        min_heap = []
+        heapq.heapify(min_heap)
+
+        dummy = ListNode()
+        curr = dummy
+
+        for i in range(len(lists)):
+            if lists[i]:
+                node = lists[i]
+                heapq.heappush(min_heap, (node.val, i, node))
+                lists[i] = lists[i].next
+        
+        while min_heap:
+            _, idx, node = heapq.heappop(min_heap)
+            curr.next = node
+            curr = curr.next
+            if lists[idx]:
+                new_node = lists[idx]
+                heapq.heappush(min_heap, (new_node.val, idx, new_node))
+                lists[idx] = lists[idx].next
+        
+        return dummy.next
+
 # Third time
 
 # Definition for singly-linked list.
