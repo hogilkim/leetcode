@@ -1,3 +1,33 @@
+# solve again
+# Dec 24, 2023 1235-3
+class Solution:
+    def jobScheduling(self, startTime: List[int], endTime: List[int], profit: List[int]) -> int:
+        jobs = sorted(zip(startTime, endTime, profit), key=lambda x:(x[1], x[0]))
+        dp = [[0,0]]
+
+        for s, e, p in jobs:
+            # compare with previous job
+            idx = self.bisect_left(dp, [s+1])-1
+            if dp[idx][1] + p > dp[-1][1]:
+                dp.append([e, dp[idx][1]+p])
+        return dp[-1][1]
+
+
+
+    def bisect_left(self, array, value):
+
+        l, r = 0, len(array)
+
+        while l < r:
+            mid = (l+r)//2
+
+            if array[mid] < value:
+                l = mid + 1
+            else:
+                r = mid
+        
+        return l
+
 import bisect
 class Solution:
     def jobScheduling(self, startTime: List[int], endTime: List[int], profit: List[int]) -> int:
