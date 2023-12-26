@@ -1,3 +1,30 @@
+# Third Dec 26, 2023 295-3
+class MedianFinder:
+
+    def __init__(self):
+        self.nums = []
+        
+    def addNum(self, num: int) -> None:
+        idx = self.bisect_left(num)
+        self.nums = self.nums[:idx] + [num] + self.nums[idx:]
+        
+    def findMedian(self) -> float:
+        if len(self.nums)%2: return self.nums[len(self.nums)//2]
+        return ( self.nums[len(self.nums)//2] + self.nums[len(self.nums)//2-1] ) / 2
+    
+    def bisect_left(self, num):
+        l, r = 0, len(self.nums)
+        
+        while l < r:
+            mid = (l+r)//2
+
+            if self.nums[mid] < num:
+                l = mid + 1
+            
+            else: r = mid
+
+        return l
+
 # second Nov 12 2022
 import heapq
 class MedianFinder:
