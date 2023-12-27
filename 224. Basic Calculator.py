@@ -1,3 +1,43 @@
+# Dec 27, 2023 244-3
+class Solution:
+    def calculate(self, s: str) -> int:
+        stack = []
+
+        def calc(num, op):
+            if op == "+":
+                stack.append(num)
+            elif op == "-":
+                stack.append(-num)
+        
+        operators = ['+', '-']
+        op = "+"
+        currnum = 0
+
+        for char in s+'+':
+            if char in operators:
+                calc(currnum, op)
+                op = char
+                currnum = 0
+            elif char.isdigit():
+                currnum = currnum*10 + int(char)
+            
+            elif char == "(":
+                currnum = 0
+                stack.append(op)
+                op = '+'
+
+            elif char == ')':
+                tempnum = 0
+                calc(currnum, op)
+                while stack and stack[-1] not in operators:
+                    tempnum += stack.pop()
+                calc(tempnum, stack.pop())
+                op = '+'
+                currnum = 0
+        
+        return sum(stack)
+
+
 # second Nov 20, 2022 
 class Solution:
     def calculate(self, s: str) -> int:
