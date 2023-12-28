@@ -1,3 +1,46 @@
+# Dec 27, 2023 772-3
+class Solution:
+    def calculate(self, s: str) -> int:
+        stack = []
+        def calc(num, op):
+            if op == "+":
+                stack.append(num)
+            elif op == "-":
+                stack.append(-num)
+            elif op == "*":
+                stack.append(stack.pop()*num)
+            elif op == '/':
+                stack.append(int(stack.pop()/num))
+        
+
+        ops = list("+-*/")
+        prev_op = "+"
+        num = 0
+        for char in s+"+":
+            if char.isdigit():
+                num = num * 10 + int(char)
+            elif char in ops:
+                calc(num, prev_op)
+                prev_op = char
+                num = 0
+            
+            elif char == "(":
+                stack.append(prev_op)
+                prev_op = '+'
+                num = 0
+            
+            else:
+                calc(num, prev_op)
+                num = 0
+                prev_op = ')'
+
+                tempnum = 0
+                while stack[-1] not in ops:
+                    tempnum += stack.pop()
+                calc(tempnum, stack.pop())
+                
+        return sum(stack)
+
 class Solution:
     def calculate(self, s: str) -> int:
         
