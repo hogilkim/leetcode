@@ -1,3 +1,35 @@
+# Solve again
+# Dec 31, 2023 210-3
+from collections import defaultdict
+class Solution:
+    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
+        available_courses = defaultdict(list)
+
+        for course, prereq in prerequisites:
+            available_courses[course].append(prereq)
+        
+        res = []
+        visited = set()
+        path = set()
+
+        def dfs(course):
+            if course in path: return False
+            if course in visited: return True
+
+            visited.add(course)
+            path.add(course)
+            
+            for prereq in available_courses[course]:
+                if not dfs(prereq): return False
+
+            res.append(course)
+            path.remove(course)
+
+            return True
+        
+
+        return res if all(dfs(course) for course in range(numCourses)) else []
+
 # second try - solved!
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
