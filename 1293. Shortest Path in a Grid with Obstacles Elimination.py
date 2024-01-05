@@ -1,3 +1,35 @@
+# Jan 5, 2024 1293-3
+from collections import deque
+class Solution:
+    def shortestPath(self, grid: List[List[int]], k: int) -> int:
+        ROW, COL = len(grid), len(grid[0])
+        directions = [(1,0), (0,1), (-1,0), (0,-1)]
+        visited = set()
+
+        queue = deque([(0,0,k)])
+        steps = 0
+
+        while queue:
+            for _ in range(len(queue)):
+                row, col, el_count = queue.popleft()
+                if (row, col) == (ROW-1, COL-1): return steps
+
+                for rdir, cdir in directions:
+                    nr, nc = row + rdir, col + cdir
+                    nk = el_count
+                    if not (0<=nr<ROW) or not (0<=nc<COL): continue
+                    if grid[nr][nc] == 1:
+                        nk -= 1
+                    
+                    if (nr, nc, nk) not in visited and nk >= 0:
+                        queue.append((nr, nc, nk))
+                        visited.add((nr, nc, nk))
+            steps += 1
+        
+        return -1
+        
+        
+
 #second attempt - solved
 from collections import deque
 class Solution:
