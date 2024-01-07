@@ -1,3 +1,21 @@
+# Jan 6, 2024 
+import heapq
+class Solution:
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        intervals = sorted(intervals, key=lambda x:(x[0],x[1]))
+        meetings_overlapped = []
+        heapq.heapify(meetings_overlapped)
+        max_rooms = 0
+
+        for start, end in intervals:
+            while meetings_overlapped and meetings_overlapped[0] <= start:
+                heapq.heappop(meetings_overlapped)
+            heapq.heappush(meetings_overlapped, end)
+            max_rooms = max(max_rooms, len(meetings_overlapped))
+        
+
+        return max_rooms
+
 # solve again
 # second attempt - Jan 14, 2022
 class Solution:
