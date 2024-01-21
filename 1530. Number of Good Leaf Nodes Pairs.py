@@ -1,3 +1,35 @@
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+from collections import Counter
+class Solution:
+    # Solve again Jan 20, 2024 1530-2
+    def countPairs(self, root: TreeNode, distance: int) -> int:
+        good_pairs = 0
+        # key: distance val: # of leave nodes
+
+        def dfs(node):
+            if not node: return Counter()
+            if not node.left and not node.right: return Counter({0:1})
+
+            counter_left = dfs(node.left)
+            counter_right = dfs(node.right)
+            nonlocal good_pairs
+
+            for distance_left, left_leave_num in counter_left.items():
+                for distance_right, right_leave_num in counter_right.items():
+                    if distance_left + distance_right + 2 <= distance:
+                        good_pairs += left_leave_num * right_leave_num
+            
+            return Counter({distance+1: leaf_num for distance, leaf_num in (counter_left + counter_right).items()})
+        
+        dfs(root)
+        return good_pairs
+
+
 # solve again
 
 # Definition for a binary tree node.
