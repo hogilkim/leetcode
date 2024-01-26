@@ -1,3 +1,35 @@
+# Solve again - Memory limit
+# Jan 25, 2024 694-3
+class Solution:
+    def numDistinctIslands(self, grid: List[List[int]]) -> int:
+        directions = {
+            (1, 0): "l",
+            (0, 1): "r",
+            (-1,0): "d",
+            (0, -1): "u"
+        }
+        ROW, COL = len(grid), len(grid[0])
+
+        visited = set()
+        islands = set()
+
+        def dfs(r, c):
+
+            visited.add((r,c))
+            new_shape = ""
+            for rd, cd in directions.keys():
+                nr, nc = r + rd, c + cd
+                if 0<=nr<ROW and 0<=nc<COL and (nr, nc) not in visited and \
+                grid[nr][nc] == 1:
+                    new_shape += directions[(rd, cd)] + dfs(nr, nc)
+            return new_shape+"b"
+        
+        for row in range(ROW):
+            for col in range(COL):
+                if grid[row][col] == 1 and (row, col) not in visited:
+                    islands.add(dfs(row, col))
+        return len(islands)
+
 # second attempt - Oct 22, 2022 solved
 
 class Solution:
