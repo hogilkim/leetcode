@@ -1,3 +1,27 @@
+# Solve again Jan 31, 2024 1802-2
+class Solution:
+    def getSum(self, peak, index, n):
+        left_val = max(peak - index, 0) # left min val
+        right_val = max(peak - (n - index - 1), 0) # right min val
+        # sum of each side: Sn = n/2 * (a1 + a2)
+        res = ( (peak + left_val) * (peak - left_val + 1) + (peak + right_val) * (peak - right_val + 1) ) // 2
+        return res - peak
+
+
+    def maxValue(self, n: int, index: int, maxSum: int) -> int:
+        maxSum -= n
+        left, right = 0, maxSum
+
+        while left < right:
+            mid = (left + right + 1) // 2
+            if self.getSum(mid, index, n) <= maxSum:
+                left = mid
+            else:
+                right = mid - 1
+        
+        return left + 1
+    
+
 class Solution:
     def maxValue(self, n: int, index: int, maxSum: int) -> int:
         res = 1
