@@ -1,17 +1,29 @@
+# Sep 2, 2026 121-4
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        min_price = float('inf')
+        lowest_price = float("inf")
+        max_profit = 0
+        for price in prices:
+            lowest_price = min(price, lowest_price)
+            max_profit = max(price - lowest_price, max_profit)
+        return max_profit
+
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        min_price = float("inf")
         max_profit = 0
 
         for num in prices:
             min_price = min(min_price, num)
-            max_profit = max(max_profit, num-min_price)
-        
+            max_profit = max(max_profit, num - min_price)
+
         return max_profit
+
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        min_price = float('inf')
+        min_price = float("inf")
 
         max_profit = 0
 
@@ -19,8 +31,8 @@ class Solution:
             max_profit = max(max_profit, price - min_price)
             min_price = min(min_price, price)
 
-
         return max_profit
+
 
 class Solution(object):
     def maxProfit(self, prices):
@@ -28,7 +40,7 @@ class Solution(object):
         :type prices: List[int]
         :rtype: int
         """
-        min_price = float('inf')
+        min_price = float("inf")
         max_diff = 0
         for price in prices:
             min_price = min(min_price, price)
