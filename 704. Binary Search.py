@@ -1,9 +1,26 @@
+# Sep 6, 2026 704-3
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        l, r = 0, len(nums)-1
+        l, r = 0, len(nums) - 1
+        while l <= r:
+            idx = (l + r) // 2
+            curr = nums[idx]
+            if curr == target:
+                return idx
+
+            if target < curr:
+                r = idx - 1
+            else:  # curr <= target
+                l = idx + 1
+        return -1
+
+
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        l, r = 0, len(nums) - 1
 
         while l < r:
-            mid = (l+r)//2
+            mid = (l + r) // 2
 
             if nums[mid] == target:
                 return mid
@@ -11,19 +28,20 @@ class Solution:
                 l = mid + 1
             else:
                 r = mid
-        
+
         return r if nums[r] == target else -1
+
 
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        left, right = 0, len(nums)-1
-        mid = (left+right)//2
+        left, right = 0, len(nums) - 1
+        mid = (left + right) // 2
         while left <= right:
             if nums[mid] == target:
                 return mid
             if nums[mid] > target:
-                right = mid -1
+                right = mid - 1
             else:
                 left = mid + 1
-            mid = (left + right) //2
+            mid = (left + right) // 2
         return -1
