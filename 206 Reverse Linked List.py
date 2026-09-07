@@ -1,3 +1,21 @@
+# Sep 7, 2026 206-3
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not head:
+            return head
+        prev, curr = head, head.next
+        head.next = None
+        while curr:
+            nxt = curr.next
+
+            curr.next = prev
+
+            prev = curr
+            curr = nxt
+
+        return prev
+
+
 # Nov 13, 2023 206-2
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
@@ -7,14 +25,17 @@ class Solution:
             nxt = curr.next
             curr.next = prev
             prev, curr = curr, nxt
-        
+
         return prev
+
 
 # Definition for singly-linked list.
 class ListNode(object):
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+
+
 class Solution(object):
     def reverseList(self, head):
         """
@@ -27,11 +48,10 @@ class Solution(object):
             head = head.next
             curr.next = prev
             prev = curr
-            
-           
+
         return prev
-        
-        
+
+
 #         node_list = []
 #         curr = head
 #         if head == None:
@@ -39,7 +59,7 @@ class Solution(object):
 #         while (curr != None):
 #             node_list.append(curr)
 #             curr = curr.next
-        
+
 #         new_head = node_list.pop()
 #         curr2 = new_head
 #         while len(node_list) > 0:
