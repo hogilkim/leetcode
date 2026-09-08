@@ -1,11 +1,27 @@
+# Sep 8, 2026 226-4
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root:
+            return None
+        new_left = self.invertTree(root.right)
+        new_right = self.invertTree(root.left)
+
+        root.left = new_left
+        root.right = new_right
+
+        return root
+
+
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
 
-        if not root: return None
-        
+        if not root:
+            return None
+
         root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)
 
         return root
+
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -15,12 +31,13 @@ class Solution:
 #         self.right = right
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        if not root: return None
+        if not root:
+            return None
 
         root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)
 
-
         return root
+
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -32,7 +49,7 @@ class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         self.helper(root)
         return root
-        
+
     def helper(self, node):
         if node:
             temp = node.left
@@ -40,8 +57,3 @@ class Solution:
             node.right = temp
             self.helper(node.left)
             self.helper(node.right)
-            
-        
-        
-        
-        
