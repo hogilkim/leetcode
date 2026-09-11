@@ -1,12 +1,26 @@
+# Sep 10, 2026 70-3
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        prev, curr = 1, 1
+
+        for _ in range(2, n + 1):
+            nxt = prev + curr
+            prev = curr
+            curr = nxt
+
+        return curr
+
+
 # Nov 12, 2023 70-2
 class Solution:
     def climbStairs(self, n: int) -> int:
         prev, curr = 1, 2
 
-        for num in range(3, n+1):
+        for num in range(3, n + 1):
             prev, curr = curr, prev + curr
-        
+
         return curr if n >= 2 else 1
+
 
 class Solution:
     def climbStairs(self, n: int) -> int:
@@ -16,6 +30,5 @@ class Solution:
 
         for i in range(2, n):
             curr, prev = curr + prev, curr
-        
+
         return curr if n > 1 else 1
-            
