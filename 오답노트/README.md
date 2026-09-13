@@ -9,3 +9,4 @@ New note: copy `_TEMPLATE.md`, then add a row below.
 |---|---------|-----------|---------|
 | 704 | [Binary Search](704.%20Binary%20Search.md) | Equality is checked inside the loop, so `idx` is ruled out — shrink with `idx ± 1`, never `r = idx` | Sep 6, 2026 |
 | 78 | [Subsets](78.%20Subsets.md) | Append `subset.copy()` to `res` in the base case `i >= len(nums)` — a subset is complete only when every index has been decided | Sep 11, 2026 |
+| 15 | [3Sum](15.%203Sum.md) | solve again | Sep 12, 2026 |
