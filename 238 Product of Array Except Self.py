@@ -1,9 +1,37 @@
+# Sep 14, 2026 238-4 solve again
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        prefix = [1] * len(nums)
+        suffix = [1] * len(nums)
+
+        for i in range(len(nums)):
+            prefix[i] *= nums[i]
+            if i > 0:
+                prefix[i] *= prefix[i - 1]
+
+        for i in range(len(nums) - 1, -1, -1):
+            suffix[i] *= nums[i]
+            if i < len(nums) - 1:
+                suffix[i] *= suffix[i + 1]
+
+        res = [1] * len(nums)
+
+        for i in range(len(res)):
+            if i > 0:
+                res[i] *= prefix[i - 1]
+            if i < len(nums) - 1:
+                res[i] *= suffix[i + 1]
+
+        return res
+
+
 # Third attempt - solve again
 # Dec 1, 2023 238-3
 
+
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        res = [1]*len(nums)
+        res = [1] * len(nums)
 
         prod_from_left = 1
         prod_from_right = 1
@@ -11,26 +39,26 @@ class Solution:
         for i in range(len(nums)):
             res[i] *= prod_from_left
             prod_from_left *= nums[i]
-        
-        for i in range(len(nums)-1, -1, -1):
-            res [i] *= prod_from_right
+
+        for i in range(len(nums) - 1, -1, -1):
+            res[i] *= prod_from_right
             prod_from_right *= nums[i]
-        
+
         return res
 
 
-# second attempt Dec 28, 2021 
+# second attempt Dec 28, 2021
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         mult = 1
         zero_num = 0
-        
+
         for num in nums:
             if num != 0:
-                mult *=num
+                mult *= num
             else:
                 zero_num += 1
-        
+
         result = []
         for num in nums:
             if zero_num > 0:
@@ -39,33 +67,33 @@ class Solution:
                 else:
                     result.append(0)
             else:
-                result.append(int(mult/num))
-        
+                result.append(int(mult / num))
+
         return result
+
 
 # class Solution(object):
 #     def productExceptSelf(self, nums):
-        
 
-        # all_multiple = 1
-        # zero_num = 0
-        # for num in nums:
-        #     if num != 0:
-        #         all_multiple *= num
-        #     else:
-        #         zero_num += 1
-                
-                
-        # return_list = []        
-        
-        # if zero_num > 1:
-        #     return [0 for i in range(len(nums))]
-        # elif zero_num == 1:
-        #     return_list = [0 for i in range(len(nums))]
-        #     return_list[nums.index(0)] = all_multiple
-        #     return return_list
-        
-        # for num in nums:
-        #     return_list.append(all_multiple/num)
-        # return return_list
-        
+
+# all_multiple = 1
+# zero_num = 0
+# for num in nums:
+#     if num != 0:
+#         all_multiple *= num
+#     else:
+#         zero_num += 1
+
+
+# return_list = []
+
+# if zero_num > 1:
+#     return [0 for i in range(len(nums))]
+# elif zero_num == 1:
+#     return_list = [0 for i in range(len(nums))]
+#     return_list[nums.index(0)] = all_multiple
+#     return return_list
+
+# for num in nums:
+#     return_list.append(all_multiple/num)
+# return return_list
