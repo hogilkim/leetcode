@@ -1,12 +1,35 @@
-from collections import Counter, defaultdict
+# Sep 14, 2026 49-3
+
+
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        
+        from collections import Counter, defaultdict
+
+        count_map = defaultdict(list)
+
+        for string in strs:
+            counter = Counter(string)
+            key = tuple(sorted(counter.items()))
+            count_map[key].append(string)
+        res = []
+
+        for _, strlist in count_map.items():
+            res.append(strlist)
+
+        return res
+
+
+from collections import Counter, defaultdict
+
+
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+
         ga = defaultdict(list)
-        
+
         for word in strs:
             ga[tuple(sorted(list(word)))].append(word)
-        
+
         return ga.values()
 
 
