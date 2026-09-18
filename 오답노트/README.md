@@ -11,3 +11,5 @@ New note: copy `_TEMPLATE.md`, then add a row below.
 | 78 | [Subsets](78.%20Subsets.md) | Append `subset.copy()` to `res` in the base case `i >= len(nums)` — a subset is complete only when every index has been decided | Sep 11, 2026 |
 | 15 | [3Sum](15.%203Sum.md) | solve again | Sep 12, 2026 |
 | 238 | [Product of Array Except Self](238.%20Product%20of%20Array%20Except%20Self.md) | solve again | Sep 14, 2026 |
+| 424 | [Longest Repeating Character Replacement](424.%20Longest%20Repeating%20Character%20Replacement.md) | try again | Sep 16, 2026 |
+| 286 | [Walls and Gates](286.%20Walls%20and%20Gates.md) | Mark a cell visited when you enqueue it, not when you pop it — otherwise the same coordinate gets pushed twice; solve again | Sep 16, 2026 |
