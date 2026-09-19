@@ -14,3 +14,4 @@ New note: copy `_TEMPLATE.md`, then add a row below.
 | 424 | [Longest Repeating Character Replacement](424.%20Longest%20Repeating%20Character%20Replacement.md) | try again | Sep 16, 2026 |
 | 286 | [Walls and Gates](286.%20Walls%20and%20Gates.md) | Mark a cell visited when you enqueue it, not when you pop it — otherwise the same coordinate gets pushed twice; solve again | Sep 16, 2026 |
 | 567 | [Permutation in String](567.%20Permutation%20in%20String.md) | Use `ord(c) - ord("a")` for indexing; compare permutations with a 26-slot count array; solve again | Sep 17, 2026 |
+| 739 | [Daily Temperatures](739.%20Daily%20Temperatures.md) | solve again | Sep 18, 2026 |
