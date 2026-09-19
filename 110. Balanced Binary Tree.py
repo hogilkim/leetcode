@@ -4,23 +4,44 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+# Sep 19, 2026 110-2
+class Solution:
+    def isBalanced(self, root: TreeNode | None) -> bool:
+
+        res = True
+
+        def dfs(node):
+            if not node:
+                return 0
+            nonlocal res
+            left = dfs(node.left)
+            right = dfs(node.right)
+            if abs(left - right) > 1:
+                res = False
+
+            return max(left, right) + 1
+
+        dfs(root)
+        return res
+
+
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
 
         res = True
-        
+
         def dfs(node):
             nonlocal res
-            if not node: return 0
+            if not node:
+                return 0
 
             left = dfs(node.left)
             right = dfs(node.right)
-            if abs(left - right) > 1: res = False
+            if abs(left - right) > 1:
+                res = False
 
             return max(left, right) + 1
-        
+
         dfs(root)
 
         return res
-
-        
