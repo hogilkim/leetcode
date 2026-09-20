@@ -1,11 +1,53 @@
-# Third attempt - solve again
-# Dec 4, 2023 
-class Solution:
-    def isValidBST(self, root: Optional[TreeNode], bottom = float('-inf'), top = float('inf')) -> bool:
-        if not root: return True
+# Sep 19, 2026 98-4
+# solved for google practice.
+def function(root):
 
-        return bottom < root.val < top and self.isValidBST(root.left, bottom, root.val)\
-                                        and self.isValidBST(root.right, root.val, top)
+    # dfs (node, min_possible_val, max_poss_val)
+    def dfs(node, min_pos_val, max_pos_val):
+        # if not node, return
+        if not node:
+            return True
+        # check if the current node is in range
+        # if not, update variable to false
+
+        # res = True
+        # if not (min_pos_val < node.val < max_pos_val):
+        #     res = False
+        # # left
+        # # dfs to left node, min_possible_val, node.val
+        # leftres = dfs(node.left, min_pos_val, node.val)
+        # # right
+        # # dfs to right, node.val, max_poss_val
+        # rightres = dfs(node.right, node.val, max_pos_val)
+
+        # return res and leftres and rightres
+
+        return (
+            min_pos_val < node.val < max_pos_val
+            and dfs(node.left, min_pos_val, node.val)
+            and dfs(node.right, node.val, max_pos_val)
+        )
+
+    # call dfs
+    return dfs(root, float("-inf"), float("inf"))
+    # return res
+
+
+# Third attempt - solve again
+# Dec 4, 2023
+class Solution:
+    def isValidBST(
+        self, root: Optional[TreeNode], bottom=float("-inf"), top=float("inf")
+    ) -> bool:
+        if not root:
+            return True
+
+        return (
+            bottom < root.val < top
+            and self.isValidBST(root.left, bottom, root.val)
+            and self.isValidBST(root.right, root.val, top)
+        )
+
 
 # solve again
 # Second attempt - Aug 10, 2022
@@ -16,11 +58,16 @@ class Solution:
 #         self.left = left
 #         self.right = right
 class Solution:
-    def isValidBST(self, root: Optional[TreeNode], floor = float('-inf'), ceiling=float('inf')) -> bool:
-        
-        return not root or (floor<root.val<ceiling and \
-                           self.isValidBST(root.left, floor, root.val) and \
-                           self.isValidBST(root.right, root.val, ceiling))
+    def isValidBST(
+        self, root: Optional[TreeNode], floor=float("-inf"), ceiling=float("inf")
+    ) -> bool:
+
+        return not root or (
+            floor < root.val < ceiling
+            and self.isValidBST(root.left, floor, root.val)
+            and self.isValidBST(root.right, root.val, ceiling)
+        )
+
 
 # solve again
 # First attempt - Jan 18, 2022
@@ -31,20 +78,24 @@ class Solution:
 #         self.left = left
 #         self.right = right
 class Solution:
-    def isValidBST(self, root: Optional[TreeNode], floor = float('-inf'), ceiling=float('inf')) -> bool:
-        return not root or (floor < root.val < ceiling and self.isValidBST(root.left, floor, root.val) and self.isValidBST(root.right, root.val, ceiling))
-        
-        
-        
-        
+    def isValidBST(
+        self, root: Optional[TreeNode], floor=float("-inf"), ceiling=float("inf")
+    ) -> bool:
+        return not root or (
+            floor < root.val < ceiling
+            and self.isValidBST(root.left, floor, root.val)
+            and self.isValidBST(root.right, root.val, ceiling)
+        )
+
+
 #         if not root: return True
-        
+
 #         if root.left:
 #             if root.left.val >= root.val:
 #                 return False
-            
+
 #         if root.right:
 #             if root.right.val <= root.val:
 #                 return False
-            
+
 #         return self.isValidBST(root.left) and self.isValidBST(root.right)
