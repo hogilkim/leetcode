@@ -15,3 +15,4 @@ New note: copy `_TEMPLATE.md`, then add a row below.
 | 286 | [Walls and Gates](286.%20Walls%20and%20Gates.md) | Mark a cell visited when you enqueue it, not when you pop it — otherwise the same coordinate gets pushed twice; solve again | Sep 16, 2026 |
 | 567 | [Permutation in String](567.%20Permutation%20in%20String.md) | Use `ord(c) - ord("a")` for indexing; compare permutations with a 26-slot count array; solve again | Sep 17, 2026 |
 | 739 | [Daily Temperatures](739.%20Daily%20Temperatures.md) | solve again | Sep 18, 2026 |
+| 153 | [Find Minimum in Rotated Sorted Array](153.%20Find%20Minimum%20in%20Rotated%20Sorted%20Array.md) | Be careful with the `if` conditions for binary search | Sep 20, 2026 |
