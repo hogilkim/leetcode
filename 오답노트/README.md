@@ -16,3 +16,4 @@ New note: copy `_TEMPLATE.md`, then add a row below.
 | 567 | [Permutation in String](567.%20Permutation%20in%20String.md) | Use `ord(c) - ord("a")` for indexing; compare permutations with a 26-slot count array; solve again | Sep 17, 2026 |
 | 739 | [Daily Temperatures](739.%20Daily%20Temperatures.md) | solve again | Sep 18, 2026 |
 | 153 | [Find Minimum in Rotated Sorted Array](153.%20Find%20Minimum%20in%20Rotated%20Sorted%20Array.md) | Be careful with the `if` conditions for binary search | Sep 20, 2026 |
+| 235 | [Lowest Common Ancestor of a Binary Search Tree](235.%20Lowest%20Common%20Ancestor%20of%20a%20Binary%20Search%20Tree.md) | Use the BST property: both smaller → go left, both larger → go right, otherwise `root` is the LCA | Sep 21, 2026 |
