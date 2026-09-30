@@ -20,3 +20,4 @@ New note: copy `_TEMPLATE.md`, then add a row below.
 | 35 | [Search Insert Position](35.%20Search%20Insert%20Position.md) | `while l < r` with `r = len(nums)`: loop ends at `l == r`, `l` is the insert slot; `r = mid` keeps the candidate, `l = mid + 1` guarantees progress | Sep 23, 2026 |
 | 45 | [Jump Game II](45.%20Jump%20Game%20II.md) | See the solution — BFS greedy, updating the window `[l, r]` → `[r + 1, farthest]` per jump | Sep 24, 2026 |
 | 134 | [Gas Station](134.%20Gas%20Station.md) | Greedy: 누적합이 음수가 되면 현재 출발점부터 `i`까지 제외하고 `i + 1`에서 다시 시작; 전체 합이 음수면 불가능 | Sep 28, 2026 |
+| 300 | [Longest Increasing Subsequence](300.%20Longest%20Increasing%20Subsequence.md) | DP: `lis[i]`는 `i`에서 시작하는 최장 길이; 오른쪽부터 `1 + lis[j]`로 갱신; 다시 풀기 | Sep 29, 2026 |
