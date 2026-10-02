@@ -19,10 +19,10 @@ The difficulty applies to the linked LeetCode problem, not necessarily to the in
 
 ## Medium (38)
 
-- [ ] [34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) — **Variant:** first/last character occurrences in a sorted string; additionally filter characters occurring more than twice.
-- [ ] [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) — **Exact** if the Kadane question asks for standard maximum subarray sum.
-- [ ] [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) — **Exact/variant:** merge overlapping intervals; the interview variation was unspecified.
-- [ ] [91. Decode Ways](https://leetcode.com/problems/decode-ways/) — **Exact:** count interpretations under the 1–26 alphabet mapping.
+- [o] [34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) — **Variant:** first/last character occurrences in a sorted string; additionally filter characters occurring more than twice.
+- [o] [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) — **Exact** if the Kadane question asks for standard maximum subarray sum.
+- [o] [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) — **Exact/variant:** merge overlapping intervals; the interview variation was unspecified.
+- [o] [91. Decode Ways](https://leetcode.com/problems/decode-ways/) — **Exact:** count interpretations under the 1–26 alphabet mapping.
 - [ ] [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) — **Related:** distinguish enclosed water from water connected to the outside ocean.
 - [ ] [146. LRU Cache](https://leetcode.com/problems/lru-cache/) — **Related:** cache implementation; distributed-cache architecture requires separate system design.
 - [ ] [200. Number of Islands](https://leetcode.com/problems/number-of-islands/) — **Related:** four-directional grid traversal and component counting; also a foundation for counting islands in a binary tree.
