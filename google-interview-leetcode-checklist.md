@@ -23,10 +23,10 @@ The difficulty applies to the linked LeetCode problem, not necessarily to the in
 - [o] [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) — **Exact** if the Kadane question asks for standard maximum subarray sum.
 - [o] [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) — **Exact/variant:** merge overlapping intervals; the interview variation was unspecified.
 - [o] [91. Decode Ways](https://leetcode.com/problems/decode-ways/) — **Exact:** count interpretations under the 1–26 alphabet mapping.
-- [ ] [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) — **Related:** distinguish enclosed water from water connected to the outside ocean.
-- [ ] [146. LRU Cache](https://leetcode.com/problems/lru-cache/) — **Related:** cache implementation; distributed-cache architecture requires separate system design.
-- [ ] [200. Number of Islands](https://leetcode.com/problems/number-of-islands/) — **Related:** four-directional grid traversal and component counting; also a foundation for counting islands in a binary tree.
-- [ ] [207. Course Schedule](https://leetcode.com/problems/course-schedule/) — **Variant:** detect cyclic task dependencies; identifying every node actually in a cycle requires additional work.
+- [o] [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) — **Related:** distinguish enclosed water from water connected to the outside ocean.
+- [o] [146. LRU Cache](https://leetcode.com/problems/lru-cache/) — **Related:** cache implementation; distributed-cache architecture requires separate system design.
+- [o] [200. Number of Islands](https://leetcode.com/problems/number-of-islands/) — **Related:** four-directional grid traversal and component counting; also a foundation for counting islands in a binary tree.
+- [o] [207. Course Schedule](https://leetcode.com/problems/course-schedule/) — **Variant:** detect cyclic task dependencies; identifying every node actually in a cycle requires additional work.
 - [ ] [253. Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/) — **Related:** minimum machines/resources when execution intervals are fixed.
 - [ ] [351. Android Unlock Patterns](https://leetcode.com/problems/android-unlock-patterns/) — **Exact:** explicitly linked in the interview notes.
 - [ ] [416. Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/) — **Related:** practice for the unspecified knapsack DP variation.
