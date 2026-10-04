@@ -1,8 +1,32 @@
-# Jan 6, 2024 
+# Oct 4, 2026 253-4
 import heapq
+
+
+class Solution:
+    def minMeetingRooms(self, intervals: list[list[int]]) -> int:
+        occupied = []
+        heapq.heapify(occupied)
+        count = 0
+
+        intervals = sorted(intervals, key=lambda x: (x[0], x[1]))
+
+        for interv in intervals:
+            while occupied and occupied[0] <= interv[0]:
+                heapq.heappop(occupied)
+            heapq.heappush(occupied, interv[1])
+
+            count = max(count, len(occupied))
+
+        return count
+
+
+# Jan 6, 2024
+import heapq
+
+
 class Solution:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
-        intervals = sorted(intervals, key=lambda x:(x[0],x[1]))
+        intervals = sorted(intervals, key=lambda x: (x[0], x[1]))
         meetings_overlapped = []
         heapq.heapify(meetings_overlapped)
         max_rooms = 0
@@ -12,9 +36,9 @@ class Solution:
                 heapq.heappop(meetings_overlapped)
             heapq.heappush(meetings_overlapped, end)
             max_rooms = max(max_rooms, len(meetings_overlapped))
-        
 
         return max_rooms
+
 
 # solve again
 # second attempt - Jan 14, 2022
@@ -25,10 +49,10 @@ class Solution:
         for interval in intervals:
             start.append(interval[0])
             end.append(interval[1])
-        
+
         start = sorted(start)
         end = sorted(end)
-        
+
         room_counter = 0
         max_counter = 0
         start_ptr, end_ptr = 0, 0
@@ -40,7 +64,7 @@ class Solution:
                 room_counter -= 1
                 end_ptr += 1
             max_counter = max(max_counter, room_counter)
-            
+
         return max_counter
 
 
@@ -53,12 +77,12 @@ class Solution:
             end.append(intervals[i][1])
         start = sorted(start)
         end = sorted(end)
-        
+
         room_counter = 0
         max_room = 0
-        start_pointer = 0 
+        start_pointer = 0
         end_pointer = 0
-        
+
         while start_pointer < len(start):
             if start[start_pointer] < end[end_pointer]:
                 room_counter += 1
@@ -67,5 +91,5 @@ class Solution:
                 room_counter -= 1
                 end_pointer += 1
             max_room = max(max_room, room_counter)
-        
+
         return max_room

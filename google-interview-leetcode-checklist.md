@@ -10,7 +10,7 @@ The difficulty applies to the linked LeetCode problem, not necessarily to the in
 
 ## Easy (6)
 
-- [ ] [278. First Bad Version](https://leetcode.com/problems/first-bad-version/) — **Exact:** first bad commit/version through an API.
+- [o] [278. First Bad Version](https://leetcode.com/problems/first-bad-version/) — **Exact:** first bad commit/version through an API.
 - [ ] [359. Logger Rate Limiter](https://leetcode.com/problems/logger-rate-limiter/) — **Exact:** ordinary 10-second logging suppression. **Variant:** suppressing both duplicates requires delayed output and retrospective invalidation.
 - [ ] [628. Maximum Product of Three Numbers](https://leetcode.com/problems/maximum-product-of-three-numbers/) — **Variant:** maximum-product selection with negative numbers; LeetCode fixes K = 3.
 - [ ] [703. Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) — **Related:** bounded top-K heap for movie ratings; similarity-graph traversal is separate.
