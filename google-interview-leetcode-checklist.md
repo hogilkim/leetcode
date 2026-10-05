@@ -29,8 +29,8 @@ The difficulty applies to the linked LeetCode problem, not necessarily to the in
 - [o] [207. Course Schedule](https://leetcode.com/problems/course-schedule/) — **Variant:** detect cyclic task dependencies; identifying every node actually in a cycle requires additional work.
 - [o] [253. Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/) — **Related:** minimum machines/resources when execution intervals are fixed.
 - [o] [351. Android Unlock Patterns](https://leetcode.com/problems/android-unlock-patterns/) — **Exact:** explicitly linked in the interview notes.
-- [ ] [416. Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/) — **Related:** practice for the unspecified knapsack DP variation.
-- [ ] [435. Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/) — **Related:** greedy interval selection.
+- [o] [416. Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/) — **Related:** practice for the unspecified knapsack DP variation.
+- [o] [435. Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/) — **Related:** greedy interval selection.
 - [ ] [560. Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) — **Related:** prefix sums with a hash map; a possible match for the unspecified hashmap optimization.
 - [ ] [621. Task Scheduler](https://leetcode.com/problems/task-scheduler/) — **Related:** minimum completion time with repeated-task cooldowns.
 - [ ] [678. Valid Parenthesis String](https://leetcode.com/problems/valid-parenthesis-string/) — **Related:** conditional character choices that permit balanced parentheses; does not model digit-controlled deletions.

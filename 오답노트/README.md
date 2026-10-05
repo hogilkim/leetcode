@@ -22,3 +22,4 @@ New note: copy `_TEMPLATE.md`, then add a row below.
 | 134 | [Gas Station](134.%20Gas%20Station.md) | Greedy: 누적합이 음수가 되면 현재 출발점부터 `i`까지 제외하고 `i + 1`에서 다시 시작; 전체 합이 음수면 불가능 | Sep 28, 2026 |
 | 300 | [Longest Increasing Subsequence](300.%20Longest%20Increasing%20Subsequence.md) | DP: `lis[i]`는 `i`에서 시작하는 최장 길이; 오른쪽부터 `1 + lis[j]`로 갱신; 다시 풀기 | Sep 29, 2026 |
 | 105 | [Construct Binary Tree from Preorder and Inorder Traversal](105.%20Construct%20Binary%20Tree%20from%20Preorder%20and%20Inorder%20Traversal.md) | Preorder의 첫 값이 root; inorder에서 왼쪽 크기를 구해 preorder를 분할; slice마다 index는 0부터 다시 시작 | Oct 1, 2026 |
+| 416 | [Partition Equal Subset Sum](416.%20Partition%20Equal%20Subset%20Sum.md) | 백트래킹 대신 부분합 DP (0/1 Knapsack); 가능한 합을 set에 저장하고 이전 집합으로 다음 집합을 갱신 | Oct 5, 2026 |
