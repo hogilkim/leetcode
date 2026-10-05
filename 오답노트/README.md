@@ -23,3 +23,5 @@ New note: copy `_TEMPLATE.md`, then add a row below.
 | 300 | [Longest Increasing Subsequence](300.%20Longest%20Increasing%20Subsequence.md) | DP: `lis[i]`는 `i`에서 시작하는 최장 길이; 오른쪽부터 `1 + lis[j]`로 갱신; 다시 풀기 | Sep 29, 2026 |
 | 105 | [Construct Binary Tree from Preorder and Inorder Traversal](105.%20Construct%20Binary%20Tree%20from%20Preorder%20and%20Inorder%20Traversal.md) | Preorder의 첫 값이 root; inorder에서 왼쪽 크기를 구해 preorder를 분할; slice마다 index는 0부터 다시 시작 | Oct 1, 2026 |
 | 416 | [Partition Equal Subset Sum](416.%20Partition%20Equal%20Subset%20Sum.md) | 백트래킹 대신 부분합 DP (0/1 Knapsack); 가능한 합을 set에 저장하고 이전 집합으로 다음 집합을 갱신 | Oct 5, 2026 |
+| 435 | [Non-overlapping Intervals](435.%20Non-overlapping%20Intervals.md) | Greedy: 겹치면 끝점이 작은 구간 유지; 겹침은 `<`; 안 겹치면 `prev` 갱신; 마지막 구간까지 확인 | Oct 5, 2026 |
+| 560 | [Subarray Sum Equals K](560.%20Subarray%20Sum%20Equals%20K.md) | 누적합 + 해시맵: 이전 `prefix - k`의 등장 횟수를 더한 뒤 현재 누적합 등록; `{0: 1}`로 시작 | Oct 5, 2026 |
