@@ -27,7 +27,7 @@ The difficulty applies to the linked LeetCode problem, not necessarily to the in
 - [o] [146. LRU Cache](https://leetcode.com/problems/lru-cache/) — **Related:** cache implementation; distributed-cache architecture requires separate system design.
 - [o] [200. Number of Islands](https://leetcode.com/problems/number-of-islands/) — **Related:** four-directional grid traversal and component counting; also a foundation for counting islands in a binary tree.
 - [o] [207. Course Schedule](https://leetcode.com/problems/course-schedule/) — **Variant:** detect cyclic task dependencies; identifying every node actually in a cycle requires additional work.
-- [ ] [253. Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/) — **Related:** minimum machines/resources when execution intervals are fixed.
+- [o] [253. Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/) — **Related:** minimum machines/resources when execution intervals are fixed.
 - [ ] [351. Android Unlock Patterns](https://leetcode.com/problems/android-unlock-patterns/) — **Exact:** explicitly linked in the interview notes.
 - [ ] [416. Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/) — **Related:** practice for the unspecified knapsack DP variation.
 - [ ] [435. Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/) — **Related:** greedy interval selection.

@@ -1,3 +1,17 @@
+# Oct 5, 2026 359-2
+class Logger:
+
+    def __init__(self):
+        self.hashmap = {}
+
+    def shouldPrintMessage(self, timestamp: int, message: str) -> bool:
+        if message not in self.hashmap or self.hashmap[message] <= timestamp:
+            self.hashmap[message] = timestamp + 10
+        else:
+            return False
+        return True
+
+
 # import collections
 class Logger:
 
@@ -6,9 +20,10 @@ class Logger:
 
     def shouldPrintMessage(self, timestamp: int, message: str) -> bool:
         if message not in self.dic:
-                self.dic[message] = timestamp
-                return True
-        elif self.dic[message] + 10 > timestamp: return False
+            self.dic[message] = timestamp
+            return True
+        elif self.dic[message] + 10 > timestamp:
+            return False
         else:
             self.dic[message] = timestamp
             return True
