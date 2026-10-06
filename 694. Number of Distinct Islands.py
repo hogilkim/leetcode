@@ -1,13 +1,40 @@
+# Oct 6, 2026 694-4
+class Solution:
+    def numDistinctIslands(self, grid: List[List[int]]) -> int:
+        directions = {(1, 0): "d", (0, 1): "r", (-1, 0): "u", (0, -1): "l"}
+        ROW, COL = len(grid), len(grid[0])
+
+        visited = set()
+        islands = set()
+
+        def dfs(r, c):
+            visited.add((r, c))
+            new_shape = ""
+            for key, val in directions.items():
+                nr, nc = r + key[0], c + key[1]
+                if (
+                    0 <= nr < ROW
+                    and 0 <= nc < COL
+                    and (nr, nc) not in visited
+                    and grid[nr][nc] == 1
+                ):
+                    new_shape += directions[key] + dfs(nr, nc)
+
+            return new_shape + "b"
+
+        for row in range(ROW):
+            for col in range(COL):
+                if (row, col) not in visited and grid[row][col] == 1:
+                    islands.add(dfs(row, col))
+
+        return len(islands)
+
+
 # Solve again - Memory limit
 # Jan 25, 2024 694-3
 class Solution:
     def numDistinctIslands(self, grid: List[List[int]]) -> int:
-        directions = {
-            (1, 0): "l",
-            (0, 1): "r",
-            (-1,0): "d",
-            (0, -1): "u"
-        }
+        directions = {(1, 0): "l", (0, 1): "r", (-1, 0): "d", (0, -1): "u"}
         ROW, COL = len(grid), len(grid[0])
 
         visited = set()
@@ -15,87 +42,95 @@ class Solution:
 
         def dfs(r, c):
 
-            visited.add((r,c))
+            visited.add((r, c))
             new_shape = ""
             for rd, cd in directions.keys():
                 nr, nc = r + rd, c + cd
-                if 0<=nr<ROW and 0<=nc<COL and (nr, nc) not in visited and \
-                grid[nr][nc] == 1:
+                if (
+                    0 <= nr < ROW
+                    and 0 <= nc < COL
+                    and (nr, nc) not in visited
+                    and grid[nr][nc] == 1
+                ):
                     new_shape += directions[(rd, cd)] + dfs(nr, nc)
-            return new_shape+"b"
-        
+            return new_shape + "b"
+
         for row in range(ROW):
             for col in range(COL):
                 if grid[row][col] == 1 and (row, col) not in visited:
                     islands.add(dfs(row, col))
         return len(islands)
 
+
 # second attempt - Oct 22, 2022 solved
 
-class Solution:
-    def numDistinctIslands(self, grid: List[List[int]]) -> int:
-        shapes = set()
-        visited = set()
-        
-        dic = {
-            (1,0): "d",
-            (0,1): "r",
-            (-1,0): "u",
-            (0,-1): "l"
-        }
-        directions = [(1,0),(0,1),(-1,0),(0,-1)]
-        
-        ROW, COL = len(grid), len(grid[0])
-        
-        def dfs(r,c, prev_dir):
-            
-            shape = prev_dir
-            visited.add((r,c))
-            
-            for rd, cd in directions:
-                nr, nc = r+rd, c+cd
-                if 0<=nr<ROW and 0<=nc<COL and grid[nr][nc] == 1 and (nr,nc) not in visited:
-                    shape += dfs(nr,nc, dic[(rd,cd)])
-            
-            return shape +"b"
-        
-        for row in range(ROW):
-            for col in range(COL):
-                if (row,col) not in visited and grid[row][col] == 1:
-                    shapes.add(dfs(row,col,""))
-        
-        return len(shapes)
 
 class Solution:
     def numDistinctIslands(self, grid: List[List[int]]) -> int:
         shapes = set()
         visited = set()
-        
+
+        dic = {(1, 0): "d", (0, 1): "r", (-1, 0): "u", (0, -1): "l"}
+        directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
+
         ROW, COL = len(grid), len(grid[0])
-        dic = {
-            (1, 0): "d",
-            (0, 1): "r",
-            (-1, 0): "u",
-            (0, -1): "l"
-        }
-        
+
+        def dfs(r, c, prev_dir):
+
+            shape = prev_dir
+            visited.add((r, c))
+
+            for rd, cd in directions:
+                nr, nc = r + rd, c + cd
+                if (
+                    0 <= nr < ROW
+                    and 0 <= nc < COL
+                    and grid[nr][nc] == 1
+                    and (nr, nc) not in visited
+                ):
+                    shape += dfs(nr, nc, dic[(rd, cd)])
+
+            return shape + "b"
+
+        for row in range(ROW):
+            for col in range(COL):
+                if (row, col) not in visited and grid[row][col] == 1:
+                    shapes.add(dfs(row, col, ""))
+
+        return len(shapes)
+
+
+class Solution:
+    def numDistinctIslands(self, grid: List[List[int]]) -> int:
+        shapes = set()
+        visited = set()
+
+        ROW, COL = len(grid), len(grid[0])
+        dic = {(1, 0): "d", (0, 1): "r", (-1, 0): "u", (0, -1): "l"}
+
         directions = dic.keys()
+
         def dfs(r, c):
             shape = ""
-            visited.add((r,c))
+            visited.add((r, c))
             for rdir, cdir in directions:
-                nr, nc = r+rdir, c+cdir
-                if 0<=nr<ROW and 0<=nc<COL and (nr, nc) not in visited and grid[nr][nc]:
+                nr, nc = r + rdir, c + cdir
+                if (
+                    0 <= nr < ROW
+                    and 0 <= nc < COL
+                    and (nr, nc) not in visited
+                    and grid[nr][nc]
+                ):
                     shape += dic[(rdir, cdir)] + dfs(nr, nc)
             shape += "b"
             return shape
-        
+
         res = 0
-        
+
         for r in range(ROW):
             for c in range(COL):
-                if grid[r][c] and (r,c) not in visited:
-                    shape = dfs(r,c)
+                if grid[r][c] and (r, c) not in visited:
+                    shape = dfs(r, c)
                     print(shape)
                     if shape not in shapes:
                         shapes.add(shape)
