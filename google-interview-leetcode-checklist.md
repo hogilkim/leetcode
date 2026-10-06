@@ -33,12 +33,12 @@ The difficulty applies to the linked LeetCode problem, not necessarily to the in
 - [o] [435. Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/) — **Related:** greedy interval selection.
 - [o] [560. Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) — **Related:** prefix sums with a hash map; a possible match for the unspecified hashmap optimization.
 - [o] [621. Task Scheduler](https://leetcode.com/problems/task-scheduler/) — **Related:** minimum completion time with repeated-task cooldowns.
-- [ ] [678. Valid Parenthesis String](https://leetcode.com/problems/valid-parenthesis-string/) — **Related:** conditional character choices that permit balanced parentheses; does not model digit-controlled deletions.
+- [o] [678. Valid Parenthesis String](https://leetcode.com/problems/valid-parenthesis-string/) — **Related:** conditional character choices that permit balanced parentheses; does not model digit-controlled deletions.
 - [o] [687. Longest Univalue Path](https://leetcode.com/problems/longest-univalue-path/) — **Exact:** longest tree path whose nodes have the same value.
 - [o] [692. Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) — **Related:** aggregate counts and return top N; adapt keys to users and counts to total words.
 - [o] [694. Number of Distinct Islands](https://leetcode.com/problems/number-of-distinct-islands/) — **Exact:** translations count as identical shapes; rotations and reflections remain distinct.
 - [ ] [721. Accounts Merge](https://leetcode.com/problems/accounts-merge/) — **Variant:** group items transitively through shared attributes; emails serve as attributes.
-- [ ] [743. Network Delay Time](https://leetcode.com/problems/network-delay-time/) — **Variant:** weighted shortest paths; choose the nearest favorite city instead of the time to reach every node.
+- [o] [743. Network Delay Time](https://leetcode.com/problems/network-delay-time/) — **Variant:** weighted shortest paths; choose the nearest favorite city instead of the time to reach every node.
 - [ ] [767. Reorganize String](https://leetcode.com/problems/reorganize-string/) — **Related:** heap-based selection while avoiding consecutive identical ads.
 - [o] [785. Is Graph Bipartite?](https://leetcode.com/problems/is-graph-bipartite/) — **Related:** alternating colors across tree layers; the interview has fixed colors and a binary-root constraint.
 - [ ] [792. Number of Matching Subsequences](https://leetcode.com/problems/number-of-matching-subsequences/) — **Related:** dictionary subsequence checking; requiring every length≥3 subsequence to appear is stronger.
