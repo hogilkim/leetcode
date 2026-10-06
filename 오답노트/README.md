@@ -26,3 +26,4 @@ New note: copy `_TEMPLATE.md`, then add a row below.
 | 435 | [Non-overlapping Intervals](435.%20Non-overlapping%20Intervals.md) | Greedy: 겹치면 끝점이 작은 구간 유지; 겹침은 `<`; 안 겹치면 `prev` 갱신; 마지막 구간까지 확인 | Oct 5, 2026 |
 | 560 | [Subarray Sum Equals K](560.%20Subarray%20Sum%20Equals%20K.md) | 누적합 + 해시맵: 이전 `prefix - k`의 등장 횟수를 더한 뒤 현재 누적합 등록; `{0: 1}`로 시작 | Oct 5, 2026 |
 | 694 | [Number of Distinct Islands](694.%20Number%20of%20Distinct%20Islands.md) | DFS 경로에 `"b"`로 복귀를 기록해야 서로 다른 가지 구조를 구분할 수 있다 | Oct 6, 2026 |
+| 785 | [Is Graph Bipartite?](785.%20Is%20Graph%20Bipartite%3F.md) | Neighbors must be on different teams: alternate `1` / `-1` with BFS, reject same-team edges, and check every connected component | Oct 6, 2026 |
