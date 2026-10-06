@@ -28,3 +28,4 @@ New note: copy `_TEMPLATE.md`, then add a row below.
 | 694 | [Number of Distinct Islands](694.%20Number%20of%20Distinct%20Islands.md) | DFS 경로에 `"b"`로 복귀를 기록해야 서로 다른 가지 구조를 구분할 수 있다 | Oct 6, 2026 |
 | 785 | [Is Graph Bipartite?](785.%20Is%20Graph%20Bipartite%3F.md) | Neighbors must be on different teams: alternate `1` / `-1` with BFS, reject same-team edges, and check every connected component | Oct 6, 2026 |
 | 743 | [Network Delay Time](743.%20Network%20Delay%20Time.md) | Shortest paths from `k`: use Dijkstra; return the maximum shortest time, or `-1` if any node is unreachable | Oct 6, 2026 |
+| 1110 | [Delete Nodes And Return Forest](1110.%20Delete%20Nodes%20And%20Return%20Forest.md) | DFS: disconnect deleted nodes; their surviving children become new roots; keep exploring through deleted nodes | Oct 6, 2026 |
