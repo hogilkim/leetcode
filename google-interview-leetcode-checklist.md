@@ -43,7 +43,7 @@ The difficulty applies to the linked LeetCode problem, not necessarily to the in
 - [o] [785. Is Graph Bipartite?](https://leetcode.com/problems/is-graph-bipartite/) — **Related:** alternating colors across tree layers; the interview has fixed colors and a binary-root constraint.
 - [ ] [792. Number of Matching Subsequences](https://leetcode.com/problems/number-of-matching-subsequences/) — **Related:** dictionary subsequence checking; requiring every length≥3 subsequence to appear is stronger.
 - [o] [846. Hand of Straights](https://leetcode.com/problems/hand-of-straights/) — **Exact:** partition into consecutive groups while handling duplicates.
-- [ ] [939. Minimum Area Rectangle](https://leetcode.com/problems/minimum-area-rectangle/) — **Variant:** axis-aligned rectangles from points; change minimum area to maximum area for the interview version.
+- [o] [939. Minimum Area Rectangle](https://leetcode.com/problems/minimum-area-rectangle/) — **Variant:** axis-aligned rectangles from points; change minimum area to maximum area for the interview version.
 - [ ] [962. Maximum Width Ramp](https://leetcode.com/problems/maximum-width-ramp/) — **Variant:** longest substring whose first character is smaller than its last; use strict inequality and return width + 1.
 - [ ] [963. Minimum Area Rectangle II](https://leetcode.com/problems/minimum-area-rectangle-ii/) — **Exact:** explicitly linked. **Variant:** arbitrary-orientation maximum-area rectangles change the objective.
 - [ ] [1102. Path With Maximum Minimum Value](https://leetcode.com/problems/path-with-maximum-minimum-value/) — **Related:** bottleneck-path objective after assigning each cell its distance from the cat.
