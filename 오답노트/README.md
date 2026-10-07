@@ -29,3 +29,4 @@ New note: copy `_TEMPLATE.md`, then add a row below.
 | 785 | [Is Graph Bipartite?](785.%20Is%20Graph%20Bipartite%3F.md) | Neighbors must be on different teams: alternate `1` / `-1` with BFS, reject same-team edges, and check every connected component | Oct 6, 2026 |
 | 743 | [Network Delay Time](743.%20Network%20Delay%20Time.md) | Shortest paths from `k`: use Dijkstra; return the maximum shortest time, or `-1` if any node is unreachable | Oct 6, 2026 |
 | 1110 | [Delete Nodes And Return Forest](1110.%20Delete%20Nodes%20And%20Return%20Forest.md) | DFS: disconnect deleted nodes; their surviving children become new roots; keep exploring through deleted nodes | Oct 6, 2026 |
+| 963 | [Minimum Area Rectangle II](963.%20Minimum%20Area%20Rectangle%20II.md) | 중점과 길이가 같은 대각선을 해시맵으로 묶기; 넓이는 한 끝점에서 두 인접 변의 길이를 곱한다 | Oct 6, 2026 |
