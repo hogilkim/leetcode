@@ -48,9 +48,9 @@ The difficulty applies to the linked LeetCode problem, not necessarily to the in
 - [ ] [792. Number of Matching Subsequences](https://leetcode.com/problems/number-of-matching-subsequences/) — **Related:** dictionary subsequence checking; requiring every length≥3 subsequence to appear is stronger.
 - [o] [846. Hand of Straights](https://leetcode.com/problems/hand-of-straights/) — **Exact:** partition into consecutive groups while handling duplicates.
 - [o] [939. Minimum Area Rectangle](https://leetcode.com/problems/minimum-area-rectangle/) — **Variant:** axis-aligned rectangles from points; change minimum area to maximum area for the interview version.
-- [ ] [962. Maximum Width Ramp](https://leetcode.com/problems/maximum-width-ramp/) — **Variant:** longest substring whose first character is smaller than its last; use strict inequality and return width + 1.
+- [o] [962. Maximum Width Ramp](https://leetcode.com/problems/maximum-width-ramp/) — **Variant:** longest substring whose first character is smaller than its last; use strict inequality and return width + 1.
 - [o] [963. Minimum Area Rectangle II](https://leetcode.com/problems/minimum-area-rectangle-ii/) — **Exact:** explicitly linked. **Variant:** arbitrary-orientation maximum-area rectangles change the objective.
-- [ ] [1102. Path With Maximum Minimum Value](https://leetcode.com/problems/path-with-maximum-minimum-value/) — **Related:** bottleneck-path objective after assigning each cell its distance from the cat.
+- [o] [1102. Path With Maximum Minimum Value](https://leetcode.com/problems/path-with-maximum-minimum-value/) — **Related:** bottleneck-path objective after assigning each cell its distance from the cat.
 - [o] [1110. Delete Nodes And Return Forest](https://leetcode.com/problems/delete-nodes-and-return-forest/) — **Related:** organizational-tree deletion; the engineer-only tree instead promotes descendants to a surviving ancestor.
 - [ ] [1167. Minimum Cost to Connect Sticks](https://leetcode.com/problems/minimum-cost-to-connect-sticks/) — **Related:** Huffman's repeated merging of the two smallest weights; does not construct character codes.
 - [ ] [1254. Number of Closed Islands](https://leetcode.com/problems/number-of-closed-islands/) — **Variant:** swap land/water roles to count enclosed water components; assigning lakes to a particular island is additional work.
