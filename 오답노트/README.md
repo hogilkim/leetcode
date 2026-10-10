@@ -29,6 +29,7 @@ Every note should briefly explain the problem and the technique used to solve it
 | 560 | [Subarray Sum Equals K](560.%20Subarray%20Sum%20Equals%20K.md) | 누적합 + 해시맵: 이전 `prefix - k`의 등장 횟수를 더한 뒤 현재 누적합 등록; `{0: 1}`로 시작 | Oct 5, 2026 |
 | 694 | [Number of Distinct Islands](694.%20Number%20of%20Distinct%20Islands.md) | DFS 경로에 `"b"`로 복귀를 기록해야 서로 다른 가지 구조를 구분할 수 있다 | Oct 6, 2026 |
 | 785 | [Is Graph Bipartite?](785.%20Is%20Graph%20Bipartite%3F.md) | Neighbors must be on different teams: alternate `1` / `-1` with BFS, reject same-team edges, and check every connected component | Oct 6, 2026 |
+| 792 | [Number of Matching Subsequences](792.%20Number%20of%20Matching%20Subsequences.md) | 다음에 필요한 문자별로 대기 버킷 구성; 현재 버킷을 먼저 비운 뒤 단어 진행; 같은 문자를 한 번에 재사용하지 않기 | Oct 10, 2026 |
 | 743 | [Network Delay Time](743.%20Network%20Delay%20Time.md) | Shortest paths from `k`: use Dijkstra; return the maximum shortest time, or `-1` if any node is unreachable | Oct 6, 2026 |
 | 1110 | [Delete Nodes And Return Forest](1110.%20Delete%20Nodes%20And%20Return%20Forest.md) | DFS: disconnect deleted nodes; their surviving children become new roots; keep exploring through deleted nodes | Oct 6, 2026 |
 | 963 | [Minimum Area Rectangle II](963.%20Minimum%20Area%20Rectangle%20II.md) | 중점과 길이가 같은 대각선을 해시맵으로 묶기; 넓이는 한 끝점에서 두 인접 변의 길이를 곱한다 | Oct 6, 2026 |
