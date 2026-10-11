@@ -43,7 +43,7 @@ The difficulty applies to the linked LeetCode problem, not necessarily to the in
 - [o] [694. Number of Distinct Islands](https://leetcode.com/problems/number-of-distinct-islands/) — **Exact:** translations count as identical shapes; rotations and reflections remain distinct.
 - [ ] [721. Accounts Merge](https://leetcode.com/problems/accounts-merge/) — **Variant:** group items transitively through shared attributes; emails serve as attributes.
 - [o] [743. Network Delay Time](https://leetcode.com/problems/network-delay-time/) — **Variant:** weighted shortest paths; choose the nearest favorite city instead of the time to reach every node.
-- [ ] [767. Reorganize String](https://leetcode.com/problems/reorganize-string/) — **Related:** heap-based selection while avoiding consecutive identical ads.
+- [o] [767. Reorganize String](https://leetcode.com/problems/reorganize-string/) — **Related:** heap-based selection while avoiding consecutive identical ads.
 - [o] [785. Is Graph Bipartite?](https://leetcode.com/problems/is-graph-bipartite/) — **Related:** alternating colors across tree layers; the interview has fixed colors and a binary-root constraint.
 - [o] [792. Number of Matching Subsequences](https://leetcode.com/problems/number-of-matching-subsequences/) — **Related:** dictionary subsequence checking; requiring every length≥3 subsequence to appear is stronger.
 - [o] [846. Hand of Straights](https://leetcode.com/problems/hand-of-straights/) — **Exact:** partition into consecutive groups while handling duplicates.
