@@ -56,7 +56,7 @@ The difficulty applies to the linked LeetCode problem, not necessarily to the in
 - [o] [1254. Number of Closed Islands](https://leetcode.com/problems/number-of-closed-islands/) — **Variant:** swap land/water roles to count enclosed water components; assigning lakes to a particular island is additional work.
 - [o] [1268. Search Suggestions System](https://leetcode.com/problems/search-suggestions-system/) — **Related:** search sorted strings by prefix; the interview asks for a count rather than suggestions.
 - [o] [1296. Divide Array in Sets of K Consecutive Numbers](https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/) — **Exact:** partition into consecutive groups; set K = 5.
-- [ ] [1801. Number of Orders in the Backlog](https://leetcode.com/problems/number-of-orders-in-the-backlog/) — **Variant:** order-book matching using buy/sell prices and priority queues.
+- [o] [1801. Number of Orders in the Backlog](https://leetcode.com/problems/number-of-orders-in-the-backlog/) — **Variant:** order-book matching using buy/sell prices and priority queues.
 - [ ] [1807. Evaluate the Bracket Pairs of a String](https://leetcode.com/problems/evaluate-the-bracket-pairs-of-a-string/) — **Variant:** replace dictionary keys between delimiters; use %key% instead of (key).
 - [ ] [1813. Sentence Similarity III](https://leetcode.com/problems/sentence-similarity-iii/) — **Exact:** two sentences differ only by insertion of one contiguous phrase.
 - [ ] [1882. Process Tasks Using Servers](https://leetcode.com/problems/process-tasks-using-servers/) — **Related:** assign tasks across machines using availability tracking.
