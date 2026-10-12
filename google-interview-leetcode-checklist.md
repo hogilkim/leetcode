@@ -54,7 +54,7 @@ The difficulty applies to the linked LeetCode problem, not necessarily to the in
 - [o] [1110. Delete Nodes And Return Forest](https://leetcode.com/problems/delete-nodes-and-return-forest/) — **Related:** organizational-tree deletion; the engineer-only tree instead promotes descendants to a surviving ancestor.
 - [o] [1167. Minimum Cost to Connect Sticks](https://leetcode.com/problems/minimum-cost-to-connect-sticks/) — **Related:** Huffman's repeated merging of the two smallest weights; does not construct character codes.
 - [o] [1254. Number of Closed Islands](https://leetcode.com/problems/number-of-closed-islands/) — **Variant:** swap land/water roles to count enclosed water components; assigning lakes to a particular island is additional work.
-- [ ] [1268. Search Suggestions System](https://leetcode.com/problems/search-suggestions-system/) — **Related:** search sorted strings by prefix; the interview asks for a count rather than suggestions.
+- [o] [1268. Search Suggestions System](https://leetcode.com/problems/search-suggestions-system/) — **Related:** search sorted strings by prefix; the interview asks for a count rather than suggestions.
 - [o] [1296. Divide Array in Sets of K Consecutive Numbers](https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/) — **Exact:** partition into consecutive groups; set K = 5.
 - [ ] [1801. Number of Orders in the Backlog](https://leetcode.com/problems/number-of-orders-in-the-backlog/) — **Variant:** order-book matching using buy/sell prices and priority queues.
 - [ ] [1807. Evaluate the Bracket Pairs of a String](https://leetcode.com/problems/evaluate-the-bracket-pairs-of-a-string/) — **Variant:** replace dictionary keys between delimiters; use %key% instead of (key).
