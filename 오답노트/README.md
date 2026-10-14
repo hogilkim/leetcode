@@ -35,3 +35,4 @@ Every note should briefly explain the problem and the technique used to solve it
 | 963 | [Minimum Area Rectangle II](963.%20Minimum%20Area%20Rectangle%20II.md) | 중점과 길이가 같은 대각선을 해시맵으로 묶기; 넓이는 한 끝점에서 두 인접 변의 길이를 곱한다 | Oct 6, 2026 |
 | 962 | [Maximum Width Ramp](962.%20Maximum%20Width%20Ramp.md) | 단조 감소 스택에 왼쪽 후보 저장; 오른쪽부터 탐색하며 조건을 만족하면 pop — 해당 후보의 최대 너비 확정; 다시 풀기 | Oct 9, 2026 |
 | 1102 | [Path With Maximum Minimum Value](1102.%20Path%20With%20Maximum%20Minimum%20Value.md) | 최대 힙 + Greedy: 경로의 최솟값을 최대화; pop 순서는 실제 경로가 아닌 탐색 순서; 도착 칸을 pop하면 최적 점수 확정 | Oct 9, 2026 |
+| 721 | [Accounts Merge](721.%20Accounts%20Merge.md) | 이메일을 노드로 그래프 구성; 첫 이메일과 양방향 연결; DFS로 연결 요소를 모아 정렬 | Oct 14, 2026 |
