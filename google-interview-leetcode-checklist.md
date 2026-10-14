@@ -57,8 +57,8 @@ The difficulty applies to the linked LeetCode problem, not necessarily to the in
 - [o] [1268. Search Suggestions System](https://leetcode.com/problems/search-suggestions-system/) — **Related:** search sorted strings by prefix; the interview asks for a count rather than suggestions.
 - [o] [1296. Divide Array in Sets of K Consecutive Numbers](https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/) — **Exact:** partition into consecutive groups; set K = 5.
 - [o] [1801. Number of Orders in the Backlog](https://leetcode.com/problems/number-of-orders-in-the-backlog/) — **Variant:** order-book matching using buy/sell prices and priority queues.
-- [ ] [1807. Evaluate the Bracket Pairs of a String](https://leetcode.com/problems/evaluate-the-bracket-pairs-of-a-string/) — **Variant:** replace dictionary keys between delimiters; use %key% instead of (key).
-- [ ] [1813. Sentence Similarity III](https://leetcode.com/problems/sentence-similarity-iii/) — **Exact:** two sentences differ only by insertion of one contiguous phrase.
+- [o] [1807. Evaluate the Bracket Pairs of a String](https://leetcode.com/problems/evaluate-the-bracket-pairs-of-a-string/) — **Variant:** replace dictionary keys between delimiters; use %key% instead of (key).
+- [o] [1813. Sentence Similarity III](https://leetcode.com/problems/sentence-similarity-iii/) — **Exact:** two sentences differ only by insertion of one contiguous phrase.
 - [ ] [1882. Process Tasks Using Servers](https://leetcode.com/problems/process-tasks-using-servers/) — **Related:** assign tasks across machines using availability tracking.
 - [ ] [1943. Describe the Painting](https://leetcode.com/problems/describe-the-painting/) — **Variant:** split overlapping people’s schedules into intervals with constant active membership; return names instead of color sums and include empty gaps. See the Round 1 practice notes below.
 - [ ] [2812. Find the Safest Path in a Grid](https://leetcode.com/problems/find-the-safest-path-in-a-grid/) — **Variant:** maximize the minimum distance from the cat along a mouse's path; adapt obstacles, endpoints, and the distance definition.
@@ -111,3 +111,9 @@ https://leetcode.com/problems/stone-game-ii/description/ medium
 
 First round Q:
 https://leetcode.com/discuss/post/2095524/google-onsite-interview-29th-may-by-iamt-jbii/
+
+google list asked past 6 months
+https://leetcode.com/discuss/post/8525983/questions-asked-by-google-in-past-6-mont-mma6/
+
+8 qs
+https://leetcode.com/discuss/post/8546037/google-2026-interviews-8-leetcode-proble-6c8a/

@@ -36,3 +36,5 @@ Every note should briefly explain the problem and the technique used to solve it
 | 962 | [Maximum Width Ramp](962.%20Maximum%20Width%20Ramp.md) | 단조 감소 스택에 왼쪽 후보 저장; 오른쪽부터 탐색하며 조건을 만족하면 pop — 해당 후보의 최대 너비 확정; 다시 풀기 | Oct 9, 2026 |
 | 1102 | [Path With Maximum Minimum Value](1102.%20Path%20With%20Maximum%20Minimum%20Value.md) | 최대 힙 + Greedy: 경로의 최솟값을 최대화; pop 순서는 실제 경로가 아닌 탐색 순서; 도착 칸을 pop하면 최적 점수 확정 | Oct 9, 2026 |
 | 721 | [Accounts Merge](721.%20Accounts%20Merge.md) | 이메일을 노드로 그래프 구성; 첫 이메일과 양방향 연결; DFS로 연결 요소를 모아 정렬 | Oct 14, 2026 |
+| 1813 | [Sentence Similarity III](1813.%20Sentence%20Similarity%20III.md) | 앞/뒤 일치 단어 수의 합이 짧은 문장 길이 이상이면 모든 단어를 덮음; 겹침 때문에 `>=`; 아직 미해결, 다시 풀기 | Oct 14, 2026 |
+| 1807 | [Evaluate the Bracket Pairs of a String — 중첩 괄호 확장](1807.%20Evaluate%20the%20Bracket%20Pairs%20of%20a%20String.md) | 깊이별 버퍼를 스택에 저장; 안쪽 key를 평가해 부모 key에 추가; 문자열 누적은 리스트 + join | Oct 14, 2026 |
