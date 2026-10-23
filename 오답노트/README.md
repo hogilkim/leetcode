@@ -8,6 +8,7 @@ Every note should briefly explain the problem and the technique used to solve it
 
 | # | Problem | 기억할 것 | Updated |
 |---|---------|-----------|---------|
+| 155 | [Min Stack](155.%20Min%20Stack.md) | 값 스택 + 깊이별 최솟값 스택; push/pop을 함께 수행; 중복 최솟값도 저장; pop 후 이전 최솟값 자동 복원; 각 연산 O(1) | Oct 23, 2026 |
 | 704 | [Binary Search](704.%20Binary%20Search.md) | Equality is checked inside the loop, so `idx` is ruled out — shrink with `idx ± 1`, never `r = idx` | Sep 6, 2026 |
 | 78 | [Subsets](78.%20Subsets.md) | Append `subset.copy()` to `res` in the base case `i >= len(nums)` — a subset is complete only when every index has been decided | Sep 11, 2026 |
 | 15 | [3Sum](15.%203Sum.md) | 정렬 + 투 포인터: 한 원소를 고정하고 합에 따라 포인터 이동; 같은 값 건너뛰기; 다시 풀기 | Oct 9, 2026 |
