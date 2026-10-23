@@ -3,6 +3,8 @@
 Things I have to remember, one note per problem.
 Solutions live in the repo root (`<번호>. <Title>.py`); the note here has the same name with `.md`.
 
+Google interview questions without LeetCode numbers are in [Google/](../Google/README.md).
+
 New note: copy `_TEMPLATE.md`, then add a row below.
 Every note should briefly explain the problem and the technique used to solve it, followed by any mistakes or reminders.
 
